@@ -1,0 +1,7 @@
+site_name: 'Thoughts: Write to Ease Learning'
+theme: readthedocs
+nav:
+  - High Output Managements: high_output_management/SUMMARY.md
+  - Scala: scala/SUMMARY.md
+  - Configuration: configurations/SUMMARY.md
+  - Big Ideas about Startups: big_ideas/SUMMARY.md
