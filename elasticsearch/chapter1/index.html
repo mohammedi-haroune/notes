@@ -11,6 +11,8 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
+        <link rel="canonical" href="https://mohammedi-haroune.github.io/notes/elasticsearch/chapter1/">
+      
       
       
         <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -84,7 +86,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="Notes: Write to Ease Learning" class="md-header-nav__button md-logo">
+        <a href="https://mohammedi-haroune.github.io/notes/" title="Notes: Write to Ease Learning" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -255,7 +257,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="Notes: Write to Ease Learning" class="md-nav__button md-logo">
+    <a href="https://mohammedi-haroune.github.io/notes/" title="Notes: Write to Ease Learning" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
@@ -767,6 +769,12 @@
       
       
       
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
     </ul>
   
 </nav>
@@ -1068,6 +1076,12 @@
       
       
       
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
     </ul>
   
 </nav>
@@ -1108,8 +1122,9 @@
 <p>By default, each index in Elasticsearch is allocated 5 primary shards and 1 replica which means that if you have at least two nodes in your cluster, your index will have 5 primary shards and another 5 replica shards (1 complete replica) for a total of 10 shards per index.</p>
 <h2 id="exploring-the-cluster">Exploring the Cluster</h2>
 <h3 id="cluster-health">Cluster health</h3>
-<pre><code>GET /_cat/health?v
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">GET /_cat/health?v</span>
+</pre></div>
+
 
 <p>Whenever we ask for the cluster health, we either get green, yellow, or red.</p>
 <ul>
@@ -1118,100 +1133,112 @@
 <li><strong>Red</strong> - some data is not available for whatever reason (cluster is partially functional)</li>
 </ul>
 <p>Elasticsearch uses unicast network discovery by default to find other nodes on the same machine, it is possible that you could accidentally start up more than one node on your computer and have them all join a single cluster. In this scenario, you may see more than 1 node in the above response.</p>
-<pre><code>GET /_cat/nodes?v
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">GET /_cat/nodes?v</span>
+</pre></div>
+
 
 <h3 id="list-all-indices">List All Indices</h3>
-<pre><code>GET /_cat/indices?v
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">GET /_cat/indices?v</span>
+</pre></div>
+
 
 <h3 id="create-an-index">Create an Index</h3>
 <p>If you have only one node, the indices created would have yellow health state which means some replicas are not already allocated.</p>
 <h3 id="index-and-query-a-document">Index and Query a Document</h3>
 <h4 id="create-the-document">Create The Document</h4>
-<pre><code class="Json">PUT /customer/_doc/1?pretty
-{
-  &quot;name&quot;: &quot;John Doe&quot;
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">PUT</span> <span class="err">/customer/_doc/</span><span class="mi">1</span><span class="err">?pretty</span>
+<span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
 
 <p>Response:</p>
-<pre><code class="Json">{
-  &quot;_index&quot; : &quot;customer&quot;,
-  &quot;_type&quot; : &quot;_doc&quot;,
-  &quot;_id&quot; : &quot;1&quot;,
-  &quot;_version&quot; : 1,
-  &quot;result&quot; : &quot;created&quot;,
-  &quot;_shards&quot; : {
-    &quot;total&quot; : 2,
-    &quot;successful&quot; : 1,
-    &quot;failed&quot; : 0
-  },
-  &quot;_seq_no&quot; : 0,
-  &quot;_primary_term&quot; : 1
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;_index&quot;</span> <span class="p">:</span> <span class="s2">&quot;customer&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;_type&quot;</span> <span class="p">:</span> <span class="s2">&quot;_doc&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;_id&quot;</span> <span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;_version&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;result&quot;</span> <span class="p">:</span> <span class="s2">&quot;created&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;_shards&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;total&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&quot;successful&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;failed&quot;</span> <span class="p">:</span> <span class="mi">0</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;_seq_no&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="nt">&quot;_primary_term&quot;</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+
 
 <p>Elasticsearch will automatically create the customer index if it didn’t already exist beforehand.</p>
 <h4 id="query-the-document">Query the Document</h4>
-<pre><code>GET /customer/_doc/1?pretty
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">GET /customer/_doc/1?pretty</span>
+</pre></div>
+
 
 <p>Respose:</p>
-<pre><code>{
-  &quot;_index&quot; : &quot;customer&quot;,
-  &quot;_type&quot; : &quot;_doc&quot;,
-  &quot;_id&quot; : &quot;1&quot;,
-  &quot;_version&quot; : 1,
-  &quot;_seq_no&quot; : 25,
-  &quot;_primary_term&quot; : 1,
-  &quot;found&quot; : true,
-  &quot;_source&quot; : { &quot;name&quot;: &quot;John Doe&quot; }
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;_index&quot;</span> <span class="p">:</span> <span class="s2">&quot;customer&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;_type&quot;</span> <span class="p">:</span> <span class="s2">&quot;_doc&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;_id&quot;</span> <span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;_version&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;_seq_no&quot;</span> <span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+  <span class="nt">&quot;_primary_term&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nt">&quot;found&quot;</span> <span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;_source&quot;</span> <span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
 
 <h3 id="delete-an-index">Delete an Index</h3>
-<pre><code>DELETE /customer?pretty
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">DELETE /customer?pretty</span>
+</pre></div>
+
 
 <h2 id="modifiying-your-data">Modifiying Your Data</h2>
 <p>Reindexig documents using the same id, updates the previously indexed document.</p>
 <h3 id="updating-documents">Updating Documents</h3>
 <p>Elasticsearch does not actually do in-place updates under the hood. Whenever we do an update, Elasticsearch deletes the old document and then indexes a new document with the update applied to it in one shot.</p>
-<pre><code>POST /customer/_doc/1/_update?pretty
-{
-  &quot;doc&quot;: { &quot;name&quot;: &quot;Jane Doe&quot; }
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">POST /customer/_doc/1/_update?pretty</span>
+<span class="err">{</span>
+<span class="err">  &quot;doc&quot;: { &quot;name&quot;: &quot;Jane Doe&quot; }</span>
+<span class="err">}</span>
+</pre></div>
+
 
 <p>Updates can also be performed by using simple scripts. This example uses a script to increment the age by 5:</p>
-<pre><code>POST /customer/_doc/1/_update?pretty
-{
-  &quot;script&quot; : &quot;ctx._source.age += 5&quot;
-}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">POST /customer/_doc/1/_update?pretty</span>
+<span class="err">{</span>
+<span class="err">  &quot;script&quot; : &quot;ctx._source.age += 5&quot;</span>
+<span class="err">}</span>
+</pre></div>
+
 
 <h3 id="deleting-documents">Deleting Documents</h3>
-<pre><code>DELETE /customer/_doc/2?pretty
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">DELETE /customer/_doc/2?pretty</span>
+</pre></div>
+
 
 <p>See the<a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.6/docs-delete-by-query.html"><code>_delete_by_query</code>API</a> to delete all documents matching a specific query</p>
 <h2 id="batch-processing">Batch Processing</h2>
 <p>Elasticsearch also provides the ability to perform any of the above operations in batches using the<a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.6/docs-bulk.html"><code>_bulk</code>API</a></p>
 <p>As a quick example, the following call indexes two documents (ID 1 - John Doe and ID 2 - Jane Doe) in one bulk operation:</p>
-<pre><code>POST /customer/_doc/_bulk?pretty
-{&quot;index&quot;:{&quot;_id&quot;:&quot;1&quot;}}
-{&quot;name&quot;: &quot;John Doe&quot; }
-{&quot;index&quot;:{&quot;_id&quot;:&quot;2&quot;}}
-{&quot;name&quot;: &quot;Jane Doe&quot; }
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">POST /customer/_doc/_bulk?pretty</span>
+<span class="err">{&quot;index&quot;:{&quot;_id&quot;:&quot;1&quot;}}</span>
+<span class="err">{&quot;name&quot;: &quot;John Doe&quot; }</span>
+<span class="err">{&quot;index&quot;:{&quot;_id&quot;:&quot;2&quot;}}</span>
+<span class="err">{&quot;name&quot;: &quot;Jane Doe&quot; }</span>
+</pre></div>
+
 
 <p>This example updates the first document (ID of 1) and then deletes the second document (ID of 2) in one bulk operation:</p>
-<pre><code>POST /customer/_doc/_bulk?pretty
-{&quot;update&quot;:{&quot;_id&quot;:&quot;1&quot;}}
-{&quot;doc&quot;: { &quot;name&quot;: &quot;John Doe becomes Jane Doe&quot; } }
-{&quot;delete&quot;:{&quot;_id&quot;:&quot;2&quot;}}
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">POST /customer/_doc/_bulk?pretty</span>
+<span class="err">{&quot;update&quot;:{&quot;_id&quot;:&quot;1&quot;}}</span>
+<span class="err">{&quot;doc&quot;: { &quot;name&quot;: &quot;John Doe becomes Jane Doe&quot; } }</span>
+<span class="err">{&quot;delete&quot;:{&quot;_id&quot;:&quot;2&quot;}}</span>
+</pre></div>
+
 
 <p>The Bulk API does not fail due to failures in one of the actions. If a single action fails for whatever reason, it will continue to process the remainder of the actions after it. When the bulk API returns, it will provide a status for each action (in the same order it was sent in) so that you can check if a specific action failed or not</p>
                 
@@ -1221,6 +1248,22 @@
               
                 
 
+
+  <h2 id="__comments">Comments</h2>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mohammedi-haroune.github.io/notes/elasticsearch/chapter1/";
+      this.page.identifier =
+        "elasticsearch/chapter1/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//harounmohammedi.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
 
               
             </article>

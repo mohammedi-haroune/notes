@@ -11,6 +11,8 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
+        <link rel="canonical" href="https://mohammedi-haroune.github.io/notes/scala/chapter1/">
+      
       
       
         <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -84,7 +86,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="Notes: Write to Ease Learning" class="md-header-nav__button md-logo">
+        <a href="https://mohammedi-haroune.github.io/notes/" title="Notes: Write to Ease Learning" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -255,7 +257,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="Notes: Write to Ease Learning" class="md-nav__button md-logo">
+    <a href="https://mohammedi-haroune.github.io/notes/" title="Notes: Write to Ease Learning" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
@@ -431,6 +433,12 @@
       
       
       
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
       
     </ul>
   
@@ -782,6 +790,12 @@
       
       
       
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
     </ul>
   
 </nav>
@@ -797,20 +811,22 @@
                 
                 <h1 id="scala">Scala</h1>
 <h2 id="how-to-slow-down-an-akka-stream">How to slow down an akka stream ?</h2>
-<pre><code class="scala">//send messages over tcp one message per second in order to make sure Tcp connection is closed after sending
-//a message. Note that is a requirement from collectorApp
-Source(messages)
-  .throttle(1, 1 seconds, 1, ThrottleMode.Shaping)
-  .runWith(tcpSink)
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="c1">//send messages over tcp one message per second in order to make sure Tcp connection is closed after sending</span>
+<span class="c1">//a message. Note that is a requirement from collectorApp</span>
+<span class="nc">Source</span><span class="o">(</span><span class="n">messages</span><span class="o">)</span>
+  <span class="o">.</span><span class="n">throttle</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">1</span> <span class="n">seconds</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="nc">ThrottleMode</span><span class="o">.</span><span class="nc">Shaping</span><span class="o">)</span>
+  <span class="o">.</span><span class="n">runWith</span><span class="o">(</span><span class="n">tcpSink</span><span class="o">)</span>
+</pre></div>
+
 
 <h2 id="how-akka-tcp-work">How akka Tcp Work ?</h2>
 <p>All of the Akka I/O APIs are accessed through manager objects. When using an I/O API, the first step is to acquire a reference to the appropriate manager. The code below shows how to acquire a reference to the<code>Tcp</code>manager.</p>
-<pre><code class="Scala">import akka.io.{ IO, Tcp }
-import context.system // implicitly used by IO(Tcp)
+<div class="codehilite"><pre><span></span><span class="k">import</span> <span class="nn">akka.io.</span><span class="o">{</span> <span class="nc">IO</span><span class="o">,</span> <span class="nc">Tcp</span> <span class="o">}</span>
+<span class="k">import</span> <span class="nn">context.system</span> <span class="c1">// implicitly used by IO(Tcp)</span>
 
-val manager = IO(Tcp)
-</code></pre>
+<span class="k">val</span> <span class="n">manager</span> <span class="k">=</span> <span class="nc">IO</span><span class="o">(</span><span class="nc">Tcp</span><span class="o">)</span>
+</pre></div>
+
 
 <p>The manager is an actor that handles the underlying low level I/O resources (selectors, channels) and instantiates workers for specific tasks, such as listening to incoming connections.</p>
                 
@@ -820,6 +836,22 @@ val manager = IO(Tcp)
               
                 
 
+
+  <h2 id="__comments">Comments</h2>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mohammedi-haroune.github.io/notes/scala/chapter1/";
+      this.page.identifier =
+        "scala/chapter1/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//harounmohammedi.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
 
               
             </article>

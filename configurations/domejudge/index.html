@@ -11,6 +11,8 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
+        <link rel="canonical" href="https://mohammedi-haroune.github.io/notes/configurations/domejudge/">
+      
       
       
         <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -84,7 +86,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="Notes: Write to Ease Learning" class="md-header-nav__button md-logo">
+        <a href="https://mohammedi-haroune.github.io/notes/" title="Notes: Write to Ease Learning" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -255,7 +257,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="Notes: Write to Ease Learning" class="md-nav__button md-logo">
+    <a href="https://mohammedi-haroune.github.io/notes/" title="Notes: Write to Ease Learning" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
@@ -508,6 +510,12 @@
       
       
       
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
       
     </ul>
   
@@ -768,6 +776,12 @@
       
       
       
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
     </ul>
   
 </nav>
@@ -782,26 +796,27 @@
                 
                 
                 <h1 id="domjudge">DomJudge</h1>
-<pre><code class="bash"># Stopping and removing mariadb container ...
-docker stop dj-mariadb &amp;&amp; docker rm dj-mariadb
+<div class="codehilite"><pre><span></span><span class="c1"># Stopping and removing mariadb container ...</span>
+docker stop dj-mariadb <span class="o">&amp;&amp;</span> docker rm dj-mariadb
 
-# Stopping and removing domserver container ...
-docker stop domserver &amp;&amp; docker rm domserver
+<span class="c1"># Stopping and removing domserver container ...</span>
+docker stop domserver <span class="o">&amp;&amp;</span> docker rm domserver
 
-# Stoping and removing judgehost-0 container ...
-docker stop judgehost-0 &amp;&amp; docker rm judgehost-0
+<span class="c1"># Stoping and removing judgehost-0 container ...</span>
+docker stop judgehost-0 <span class="o">&amp;&amp;</span> docker rm judgehost-0
 
-# Starting mariabdb container ...
-docker run -d --name dj-mariadb -v data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=hED522QC@pwDR$n+ -e MYSQL_USER=domjudge -e MYSQL_PASSWORD=_D-F%X2KfKNSqCQB -e MYSQL_DATABASE=domjudge -p 13306:3306 mariadb --max-connections=1000
-sleep 10
+<span class="c1"># Starting mariabdb container ...</span>
+docker run -d --name dj-mariadb -v data:/var/lib/mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>hED522QC@pwDR<span class="nv">$n</span>+ -e <span class="nv">MYSQL_USER</span><span class="o">=</span>domjudge -e <span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>_D-F%X2KfKNSqCQB -e <span class="nv">MYSQL_DATABASE</span><span class="o">=</span>domjudge -p <span class="m">13306</span>:3306 mariadb --max-connections<span class="o">=</span><span class="m">1000</span>
+sleep <span class="m">10</span>
 
-# Starting domserver container ....
-docker run -d -v /sys/fs/cgroup:/sys/fs/cgroup:ro --link dj-mariadb:mariadb -e MYSQL_HOST=mariadb -e MYSQL_USER=domjudge -e MYSQL_DATABASE=domjudge -e MYSQL_PASSWORD=_D-F%X2KfKNSqCQB -e MYSQL_ROOT_PASSWORD=hED522QC@pwDR$n+ -p 80:80 --name domserver domjudge/domserver:latest
-sleep 10
+<span class="c1"># Starting domserver container ....</span>
+docker run -d -v /sys/fs/cgroup:/sys/fs/cgroup:ro --link dj-mariadb:mariadb -e <span class="nv">MYSQL_HOST</span><span class="o">=</span>mariadb -e <span class="nv">MYSQL_USER</span><span class="o">=</span>domjudge -e <span class="nv">MYSQL_DATABASE</span><span class="o">=</span>domjudge -e <span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>_D-F%X2KfKNSqCQB -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>hED522QC@pwDR<span class="nv">$n</span>+ -p <span class="m">80</span>:80 --name domserver domjudge/domserver:latest
+sleep <span class="m">10</span>
 
-# Starting judgehost-0 container ...
-docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro --link domserver:domserver -e DOMSERVER_BASEURL=http://domserver/ -e JUDGEDAEMON_PASSWORD=Bng2TV2Nv%mPdfW! --name judgehost-0 --link domserver:domserver --hostname judgedaemon-0 -e DAEMON_ID=0 domjudge/judgehost:latest
-</code></pre>
+<span class="c1"># Starting judgehost-0 container ...</span>
+docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro --link domserver:domserver -e <span class="nv">DOMSERVER_BASEURL</span><span class="o">=</span>http://domserver/ -e <span class="nv">JUDGEDAEMON_PASSWORD</span><span class="o">=</span>Bng2TV2Nv%mPdfW! --name judgehost-0 --link domserver:domserver --hostname judgedaemon-0 -e <span class="nv">DAEMON_ID</span><span class="o">=</span><span class="m">0</span> domjudge/judgehost:latest
+</pre></div>
+
 
 <h3 id="notes">Notes:</h3>
 <ul>
@@ -819,6 +834,22 @@ docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro --link domserver:
               
                 
 
+
+  <h2 id="__comments">Comments</h2>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mohammedi-haroune.github.io/notes/configurations/domejudge/";
+      this.page.identifier =
+        "configurations/domejudge/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//harounmohammedi.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
 
               
             </article>

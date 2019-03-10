@@ -11,6 +11,8 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
+        <link rel="canonical" href="https://mohammedi-haroune.github.io/notes/configurations/docker/">
+      
       
       
         <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -84,7 +86,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="Notes: Write to Ease Learning" class="md-header-nav__button md-logo">
+        <a href="https://mohammedi-haroune.github.io/notes/" title="Notes: Write to Ease Learning" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -255,7 +257,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="Notes: Write to Ease Learning" class="md-nav__button md-logo">
+    <a href="https://mohammedi-haroune.github.io/notes/" title="Notes: Write to Ease Learning" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
@@ -517,6 +519,12 @@
       
       
       
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
       
     </ul>
   
@@ -810,6 +818,12 @@
       
       
       
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
     </ul>
   
 </nav>
@@ -825,31 +839,38 @@
                 
                 <h1 id="docker">Docker</h1>
 <h2 id="install-docker">Install docker</h2>
-<pre><code>curl -fsSL https://get.docker.com -o get-docker.sh
+<div class="codehilite"><pre><span></span>curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
-</code></pre>
+</pre></div>
+
 
 <p>To run docker commands without sudo</p>
-<pre><code>sudo usermod -aG docker your-user
-</code></pre>
+<div class="codehilite"><pre><span></span>sudo usermod -aG docker your-user
+</pre></div>
 
-<p><em>You should logout and log back in in order for this to take effect, otherwise run commands with sudo</em></p>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You should logout and log back in in order for this to take effect, otherwise run commands with sudo</p>
+</div>
 <h2 id="access-gcr-google-cloud-registery-where-our-docker-images-live-p">Access gcr (google cloud registery, where our docker images live :p)</h2>
 <p>If you are inside a gcp vm you don't have to log in to your google acount an application credentials is provided and will be utilized by default</p>
-<pre><code>gcloud auth configure-docker
-</code></pre>
+<div class="codehilite"><pre><span></span>gcloud auth configure-docker
+</pre></div>
+
 
 <h2 id="install-gcloud-for-ubuntu">Install gcloud for Ubuntu</h2>
-<pre><code>export CLOUD_SDK_REPO=&quot;cloud-sdk-$(lsb_release -c -s)&quot;
-echo &quot;deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main&quot; | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">CLOUD_SDK_REPO</span><span class="o">=</span><span class="s2">&quot;cloud-sdk-</span><span class="k">$(</span>lsb_release -c -s<span class="k">)</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;deb http://packages.cloud.google.com/apt </span><span class="nv">$CLOUD_SDK_REPO</span><span class="s2"> main&quot;</span> <span class="p">|</span> sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg <span class="p">|</span> sudo apt-key add -
+sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get install google-cloud-sdk
+</pre></div>
+
 
 <h2 id="initialize-configurations">Initialize configurations</h2>
 <p>like login account and default project</p>
-<pre><code>gcloud init
-</code></pre>
+<div class="codehilite"><pre><span></span>gcloud init
+</pre></div>
                 
                   
                 
@@ -857,6 +878,22 @@ sudo apt-get update &amp;&amp; sudo apt-get install google-cloud-sdk
               
                 
 
+
+  <h2 id="__comments">Comments</h2>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mohammedi-haroune.github.io/notes/configurations/docker/";
+      this.page.identifier =
+        "configurations/docker/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//harounmohammedi.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
 
               
             </article>

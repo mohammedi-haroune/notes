@@ -11,6 +11,8 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
+        <link rel="canonical" href="https://mohammedi-haroune.github.io/notes/configurations/archiva/">
+      
       
       
         <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -84,7 +86,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="Notes: Write to Ease Learning" class="md-header-nav__button md-logo">
+        <a href="https://mohammedi-haroune.github.io/notes/" title="Notes: Write to Ease Learning" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -255,7 +257,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="Notes: Write to Ease Learning" class="md-nav__button md-logo">
+    <a href="https://mohammedi-haroune.github.io/notes/" title="Notes: Write to Ease Learning" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
@@ -742,14 +744,14 @@
 <li>The deployment user needs the Role 'Repository Manager' for each repository that you want to deploy to</li>
 <li>To configure sbt's <code>publish</code> add the folowing to build.sbt or the commonSettings for multi project build:</li>
 </ol>
-<pre><code>publishTo := Some(&quot;snapshots&quot; at &quot;http://localhost:8080/repository/snapshots/&quot;),
-  credentials += Credentials(
-    &quot;Repository Archiva Managed snapshots Repository&quot;,
-    &quot;localhost&quot;,
-    &quot;gitlab-ci&quot;,
-    &quot;gitlab-ci1&quot;
-  )
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">publishTo</span> <span class="o">:=</span> <span class="nc">Some</span><span class="o">(</span><span class="s">&quot;snapshots&quot;</span> <span class="n">at</span> <span class="s">&quot;http://localhost:8080/repository/snapshots/&quot;</span><span class="o">),</span>
+  <span class="n">credentials</span> <span class="o">+=</span> <span class="nc">Credentials</span><span class="o">(</span>
+    <span class="s">&quot;Repository Archiva Managed snapshots Repository&quot;</span><span class="o">,</span>
+    <span class="s">&quot;localhost&quot;</span><span class="o">,</span>
+    <span class="s">&quot;gitlab-ci&quot;</span><span class="o">,</span>
+    <span class="s">&quot;gitlab-ci1&quot;</span>
+  <span class="o">)</span>
+</pre></div>
                 
                   
                 
@@ -757,6 +759,22 @@
               
                 
 
+
+  <h2 id="__comments">Comments</h2>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mohammedi-haroune.github.io/notes/configurations/archiva/";
+      this.page.identifier =
+        "configurations/archiva/";
+    };
+    (function() {
+      var d = document, s = d.createElement("script");
+      s.src = "//harounmohammedi.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
 
               
             </article>
