@@ -1,24 +1,24 @@
 # DomJudge
 
 ```bash
-echo -e "\e[36mStoping and removing mariadb container ...\e[0m"
+# Stopping and removing mariadb container ...
 docker stop dj-mariadb && docker rm dj-mariadb
 
-echo -e "\e[36mStoping and removing domserver container ...\e[0m"
+# Stopping and removing domserver container ...
 docker stop domserver && docker rm domserver
 
-echo -e "\e[36mStoping and removing judgehost-0 container ...\e[0m"
+# Stoping and removing judgehost-0 container ...
 docker stop judgehost-0 && docker rm judgehost-0
 
-echo -e "\e[36mStarting mariabdb container ...\e[0m"
+# Starting mariabdb container ...
 docker run -d --name dj-mariadb -v data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=hED522QC@pwDR$n+ -e MYSQL_USER=domjudge -e MYSQL_PASSWORD=_D-F%X2KfKNSqCQB -e MYSQL_DATABASE=domjudge -p 13306:3306 mariadb --max-connections=1000
 sleep 10
 
-echo -e "\e[36mStarting domserver container ....\e[0m"
+# Starting domserver container ....
 docker run -d -v /sys/fs/cgroup:/sys/fs/cgroup:ro --link dj-mariadb:mariadb -e MYSQL_HOST=mariadb -e MYSQL_USER=domjudge -e MYSQL_DATABASE=domjudge -e MYSQL_PASSWORD=_D-F%X2KfKNSqCQB -e MYSQL_ROOT_PASSWORD=hED522QC@pwDR$n+ -p 80:80 --name domserver domjudge/domserver:latest
 sleep 10
 
-echo -e "\e[36mStarting judgehost-0 container ...\e[0m"
+# Starting judgehost-0 container ...
 docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro --link domserver:domserver -e DOMSERVER_BASEURL=http://domserver/ -e JUDGEDAEMON_PASSWORD=Bng2TV2Nv%mPdfW! --name judgehost-0 --link domserver:domserver --hostname judgedaemon-0 -e DAEMON_ID=0 domjudge/judgehost:latest
 ```
 
