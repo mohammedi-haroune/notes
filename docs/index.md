@@ -1,16 +1,10 @@
 # Welcome to My Notes
 Here I try to mention everything I learned, ideas, books, code snippetes, configurations ..ect
 
-## Commands
+## Important note
+Those notes are not intended to be understable for everyone !
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+I'm just writing notes about what I'm learning, about ideas that pitched me but the notes are not structured in a way to be read by everyone. 
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Contribution
+If you find any mistake, typos or just wanting to improve those notes, feel free to open issues, pull requests are very welcomed
