@@ -4,7 +4,7 @@
 2. The deployment user needs the Role 'Repository Manager' for each repository that you want to deploy to
 3. To configure sbt's `publish` add the folowing to build.sbt or the commonSettings for multi project build:
 
-```
+```scala
 publishTo := Some("snapshots" at "http://localhost:8080/repository/snapshots/"),
   credentials += Credentials(
     "Repository Archiva Managed snapshots Repository",
