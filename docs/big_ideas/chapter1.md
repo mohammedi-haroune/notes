@@ -50,5 +50,8 @@ What's really matters:
 * People they will be working with.
 * Work Environment.
 
+## Recruiting
 
-
+* Have a military mindset.
+* Eager to learn
+* Be able to share his knowledge.
