@@ -1,4 +1,4 @@
-# The Basics of Production: Delivering a Breakfast {#h2}
+# The Basics of Production: Delivering a Breakfast
 
 ## Limiting step
 
@@ -10,7 +10,4 @@ The time separating the start of the diffrent production steps based on the limi
 
 ## Production Operations
 
- _process, assemble and test._
-
-
-## [Next](chapter-2.md)
+_process, assemble and test._
