@@ -102,7 +102,7 @@ GET /customer/_doc/1?pretty
 
 Respose:
 
-```
+```json
 {
   "_index" : "customer",
   "_type" : "_doc",
