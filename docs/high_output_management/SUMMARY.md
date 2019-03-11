@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [Introduction](introduction.md)
 * [The Basics of Production: Delivering a Breakfast](chapter1.md)
-* [Chapter 2](chapter-2.md)
+* [Chapter 2](chapter2.md)
 
