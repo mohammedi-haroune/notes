@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://mohammedi-haroune.github.io/notes/configurations/domejudge/">
+        <link rel="canonical" href="https://mohammedi-haroune.github.io/notes/configurations/kafka/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>DomeJudge - Notes: Write to Ease Learning</title>
+        <title>Kafka - Notes: Write to Ease Learning</title>
       
     
     
@@ -77,7 +77,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#domjudge" tabindex="1" class="md-skip">
+      <a href="#kafka" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -102,7 +102,7 @@
               Notes: Write to Ease Learning
             </span>
             <span class="md-header-nav__topic">
-              DomeJudge
+              Kafka
             </span>
           
         </div>
@@ -381,20 +381,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="DomeJudge" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../domejudge/" title="DomeJudge" class="md-nav__link">
       DomeJudge
     </a>
-    
   </li>
 
         
@@ -414,11 +405,70 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../kafka/" title="Kafka" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Kafka
+      </label>
+    
+    <a href="./" title="Kafka" class="md-nav__link md-nav__link--active">
       Kafka
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#consumer-consumption-status" title="Consumer Consumption Status" class="md-nav__link">
+    Consumer Consumption Status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-number-of-messages-in-a-topic" title="Get number of messages in a topic" class="md-nav__link">
+    Get number of messages in a topic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-the-details-of-a-consumer-group" title="View the details of a consumer group" class="md-nav__link">
+    View the details of a consumer group
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-the-consumer-groups-known-to-kafka" title="List the consumer groups known to Kafka" class="md-nav__link">
+    List the consumer groups known to Kafka
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -660,6 +710,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#consumer-consumption-status" title="Consumer Consumption Status" class="md-nav__link">
+    Consumer Consumption Status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-number-of-messages-in-a-topic" title="Get number of messages in a topic" class="md-nav__link">
+    Get number of messages in a topic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-the-details-of-a-consumer-group" title="View the details of a consumer group" class="md-nav__link">
+    View the details of a consumer group
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-the-consumer-groups-known-to-kafka" title="List the consumer groups known to Kafka" class="md-nav__link">
+    List the consumer groups known to Kafka
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -671,40 +758,25 @@
               
                 
                 
-                <h1 id="domjudge">DomJudge</h1>
-<div class="codehilite"><pre><span></span><span class="c1"># Stopping and removing mariadb container ...</span>
-docker stop dj-mariadb <span class="o">&amp;&amp;</span> docker rm dj-mariadb
-
-<span class="c1"># Stopping and removing domserver container ...</span>
-docker stop domserver <span class="o">&amp;&amp;</span> docker rm domserver
-
-<span class="c1"># Stoping and removing judgehost-0 container ...</span>
-docker stop judgehost-0 <span class="o">&amp;&amp;</span> docker rm judgehost-0
-
-<span class="c1"># Starting mariabdb container ...</span>
-docker run -d --name dj-mariadb -v data:/var/lib/mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>hED522QC@pwDR<span class="nv">$n</span>+ -e <span class="nv">MYSQL_USER</span><span class="o">=</span>domjudge -e <span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>_D-F%X2KfKNSqCQB -e <span class="nv">MYSQL_DATABASE</span><span class="o">=</span>domjudge -p <span class="m">13306</span>:3306 mariadb --max-connections<span class="o">=</span><span class="m">1000</span>
-sleep <span class="m">10</span>
-
-<span class="c1"># Starting domserver container ....</span>
-docker run -d -v /sys/fs/cgroup:/sys/fs/cgroup:ro --link dj-mariadb:mariadb -e <span class="nv">MYSQL_HOST</span><span class="o">=</span>mariadb -e <span class="nv">MYSQL_USER</span><span class="o">=</span>domjudge -e <span class="nv">MYSQL_DATABASE</span><span class="o">=</span>domjudge -e <span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>_D-F%X2KfKNSqCQB -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>hED522QC@pwDR<span class="nv">$n</span>+ -p <span class="m">80</span>:80 --name domserver domjudge/domserver:latest
-sleep <span class="m">10</span>
-
-<span class="c1"># Starting judgehost-0 container ...</span>
-docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro --link domserver:domserver -e <span class="nv">DOMSERVER_BASEURL</span><span class="o">=</span>http://domserver/ -e <span class="nv">JUDGEDAEMON_PASSWORD</span><span class="o">=</span>Bng2TV2Nv%mPdfW! --name judgehost-0 --link domserver:domserver --hostname judgedaemon-0 -e <span class="nv">DAEMON_ID</span><span class="o">=</span><span class="m">0</span> domjudge/judgehost:latest
+                <h1 id="kafka">Kafka</h1>
+<h2 id="consumer-consumption-status">Consumer Consumption Status</h2>
+<div class="codehilite"><pre><span></span>kafka-consumer-groups.sh --bootstrap-server kafka:9092 --describe --group test-migration <span class="p">|</span> awk <span class="s1">&#39;{lag_sum += $5; total_sum += $4; done_sum += $3} END {print &quot;Completed count: &quot; done_sum &quot;, Lag: &quot; lag_sum &quot;, Total number of records: &quot; total_sum}&#39;</span>
 </pre></div>
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul>
-<li><code>link</code> is used to link containes to each others, for example to be able to access the domserver from the judgehost.</li>
-<li>Even if the domejudge is down the web interface can't detect that and the status <strong>Active: yes</strong> is still there with a green flag (<strong>Status:OK</strong>), after some time it is replaced with the yellow flag (<strong>Status:Warning</strong>) then the red one (<strong>Status:Critical)</strong> but the status <strong>Active:yes</strong> is still there. if the judghost is booted up again the green flag (<strong>Status:OK</strong>) will showed up agin</li>
-<li>If we run another judgehost (with another <code>DAEMON_ID</code>), it will show up in the judgehosts web interface</li>
-<li><code>JUDGEDAEMON_PASSWORD</code>(defaults to <code>judgehost</code>) environment variable should be the password for the <code>JUDGEDAEMON_USERNAME</code> (defaults to <code>password</code>) user. This should be ready before starting the domjudge</li>
-<li>If the db container took down the web interface will go out of service</li>
-<li>When the db container is rebooted up :Boom: the web interface is reactive again and the data is also persitested.</li>
-</ul>
-</div>
+<h2 id="get-number-of-messages-in-a-topic">Get number of messages in a topic</h2>
+<div class="codehilite"><pre><span></span>kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list localhost:9092 --topic mytopic --time -1 --offsets <span class="m">1</span> <span class="p">|</span> awk -F <span class="s2">&quot;:&quot;</span> <span class="s1">&#39;{sum += $3} END {print sum}&#39;</span>
+</pre></div>
+
+
+<h2 id="view-the-details-of-a-consumer-group">View the details of a consumer group</h2>
+<div class="codehilite"><pre><span></span>kafka-consumer-groups.sh --bootstrap-servers kafka:9092 --describe --group &lt;group name&gt;
+</pre></div>
+
+
+<h2 id="list-the-consumer-groups-known-to-kafka">List the consumer groups known to Kafka</h2>
+<div class="codehilite"><pre><span></span>kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
+</pre></div>
                 
                   
                 
@@ -725,7 +797,7 @@ docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro --link domserver:
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../docker/" title="Docker" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../archiva/" title="Archiva" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -734,19 +806,19 @@ docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro --link domserver:
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Docker
+                Archiva
               </span>
             </div>
           </a>
         
         
-          <a href="../archiva/" title="Archiva" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../big_ideas/SUMMARY/" title="Summary" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Archiva
+                Summary
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

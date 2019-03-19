@@ -145,119 +145,6 @@
         
       
       
-        
-
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  <li class="md-tabs__item">
-    
-      <a href="../.." title="Home" class="md-tabs__link">
-        Home
-      </a>
-    
-  </li>
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../high_output_management/SUMMARY/" title="High Output Managements" class="md-tabs__link">
-          High Output Managements
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../scala/SUMMARY/" title="Scala" class="md-tabs__link">
-          Scala
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../SUMMARY/" title="Configuration" class="md-tabs__link md-tabs__link--active">
-          Configuration
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../big_ideas/SUMMARY/" title="Big Ideas about Startups" class="md-tabs__link">
-          Big Ideas about Startups
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../elasticsearch/SUMMARY/" title="Elasticserach" class="md-tabs__link">
-          Elasticserach
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../programming/SUMMARY/" title="Programming" class="md-tabs__link">
-          Programming
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../react/SUMMARY/" title="ReactJs" class="md-tabs__link">
-          ReactJs
-        </a>
-      
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-      
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
@@ -697,6 +584,30 @@
   <li class="md-nav__item">
     <a href="../archiva/" title="Archiva" class="md-nav__link">
       Archiva
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kafka/" title="Kafka" class="md-nav__link">
+      Kafka
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ammonite.md" title="Ammonite" class="md-nav__link">
+      Ammonite
     </a>
   </li>
 
@@ -1335,6 +1246,49 @@
   <span class="nt">&lt;/root&gt;</span>
 <span class="nt">&lt;/configuration&gt;</span>
 </pre></div>
+
+
+<h2 id="size-and-time-based-rolling-policy">Size and time based rolling policy</h2>
+<div class="codehilite"><pre><span></span>&lt;configuration&gt;
+  &lt;appender <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;ROLLING&quot;</span> <span class="nv">class</span><span class="o">=</span><span class="s2">&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;</span>&gt;
+    &lt;file&gt;mylog.txt&lt;/file&gt;
+    &lt;rollingPolicy <span class="nv">class</span><span class="o">=</span><span class="s2">&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy&quot;</span>&gt;
+      &lt;!-- rollover daily --&gt;
+      &lt;fileNamePattern&gt;mylog-%d<span class="o">{</span>yyyy-MM-dd<span class="o">}</span>.%i.txt&lt;/fileNamePattern&gt;
+       &lt;!-- each file should be at most 100MB, keep <span class="m">60</span> days worth of history, but at most 20GB --&gt;
+       &lt;maxFileSize&gt;100MB&lt;/maxFileSize&gt;    
+       &lt;!-- <span class="k">if</span> maxHistory is not set: <span class="s1">&#39;maxHistory&#39;</span> is not set, ignoring <span class="s1">&#39;totalSizeCap&#39;</span> option with value <span class="o">[</span><span class="m">10</span> KB<span class="o">]</span> --&gt;
+       &lt;maxHistory&gt;60&lt;/maxHistory&gt;
+       &lt;totalSizeCap&gt;20GB&lt;/totalSizeCap&gt;
+    &lt;/rollingPolicy&gt;
+    &lt;encoder&gt;
+      &lt;pattern&gt;%msg%n&lt;/pattern&gt;
+    &lt;/encoder&gt;
+  &lt;/appender&gt;
+
+
+  &lt;root <span class="nv">level</span><span class="o">=</span><span class="s2">&quot;DEBUG&quot;</span>&gt;
+    &lt;appender-ref <span class="nv">ref</span><span class="o">=</span><span class="s2">&quot;ROLLING&quot;</span> /&gt;
+  &lt;/root&gt;
+
+&lt;/configuration&gt;
+</pre></div>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>totalSizeCap</code> is ignored if <code>maxHistory</code> is not set</p>
+</div>
+<h2 id="compression">Compression</h2>
+<p>To enable compression just name your file <code>*.gz</code> or <code>*.zip</code> and logback will do that for you</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>file property set to <code>/wombat/foo.txt</code>: During November 23rd, 2009, logging output will go to the file <code>/wombat/foo.txt</code>. At midnight that file will be compressed and renamed as <code>/wombat/foo.2009-11-23.gz</code>. A new <code>/wombat/foo.txt</code> file will be created where logging output will go for the rest of November 24rd. At midnight November 24th, <code>/wombat/foo.txt</code> will be compressed and renamed as <code>/wombat/foo.2009-11-24.gz</code> and so on.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>File compresion is not support in <a href="https://logback.qos.ch/manual/appenders.html#prudentWithRolling">prudent mode</a></p>
+</div>
                 
                   
                 

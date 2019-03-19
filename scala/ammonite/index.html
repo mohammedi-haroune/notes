@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://mohammedi-haroune.github.io/notes/configurations/domejudge/">
+        <link rel="canonical" href="https://mohammedi-haroune.github.io/notes/scala/ammonite/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>DomeJudge - Notes: Write to Ease Learning</title>
+        <title>Ammonite - Notes: Write to Ease Learning</title>
       
     
     
@@ -77,7 +77,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#domjudge" tabindex="1" class="md-skip">
+      <a href="#ammonite" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -102,7 +102,7 @@
               Notes: Write to Ease Learning
             </span>
             <span class="md-header-nav__topic">
-              DomeJudge
+              Ammonite
             </span>
           
         </div>
@@ -285,7 +285,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../scala/SUMMARY/" title="Summary" class="md-nav__link">
+    <a href="../SUMMARY/" title="Summary" class="md-nav__link">
       Summary
     </a>
   </li>
@@ -297,7 +297,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../scala/chapter1/" title="Scala" class="md-nav__link">
+    <a href="../chapter1/" title="Scala" class="md-nav__link">
       Scala
     </a>
   </li>
@@ -309,7 +309,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../scala/sbt/" title="Sbt" class="md-nav__link">
+    <a href="../sbt/" title="Sbt" class="md-nav__link">
       Sbt
     </a>
   </li>
@@ -324,12 +324,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       Configuration
@@ -347,7 +345,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../SUMMARY/" title="Summary" class="md-nav__link">
+    <a href="../../configurations/SUMMARY/" title="Summary" class="md-nav__link">
       Summary
     </a>
   </li>
@@ -359,7 +357,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../logback/" title="Log back" class="md-nav__link">
+    <a href="../../configurations/logback/" title="Log back" class="md-nav__link">
       Log back
     </a>
   </li>
@@ -371,7 +369,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../docker/" title="Docker" class="md-nav__link">
+    <a href="../../configurations/docker/" title="Docker" class="md-nav__link">
       Docker
     </a>
   </li>
@@ -381,20 +379,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="DomeJudge" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../configurations/domejudge/" title="DomeJudge" class="md-nav__link">
       DomeJudge
     </a>
-    
   </li>
 
         
@@ -404,7 +393,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../archiva/" title="Archiva" class="md-nav__link">
+    <a href="../../configurations/archiva/" title="Archiva" class="md-nav__link">
       Archiva
     </a>
   </li>
@@ -416,7 +405,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../kafka/" title="Kafka" class="md-nav__link">
+    <a href="../../configurations/kafka/" title="Kafka" class="md-nav__link">
       Kafka
     </a>
   </li>
@@ -428,7 +417,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../ammonite.md" title="Ammonite" class="md-nav__link">
+    <a href="../../configurations/ammonite.md" title="Ammonite" class="md-nav__link">
       Ammonite
     </a>
   </li>
@@ -660,6 +649,29 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install" title="Install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-files" title="Script Files" class="md-nav__link">
+    Script Files
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -671,40 +683,14 @@
               
                 
                 
-                <h1 id="domjudge">DomJudge</h1>
-<div class="codehilite"><pre><span></span><span class="c1"># Stopping and removing mariadb container ...</span>
-docker stop dj-mariadb <span class="o">&amp;&amp;</span> docker rm dj-mariadb
-
-<span class="c1"># Stopping and removing domserver container ...</span>
-docker stop domserver <span class="o">&amp;&amp;</span> docker rm domserver
-
-<span class="c1"># Stoping and removing judgehost-0 container ...</span>
-docker stop judgehost-0 <span class="o">&amp;&amp;</span> docker rm judgehost-0
-
-<span class="c1"># Starting mariabdb container ...</span>
-docker run -d --name dj-mariadb -v data:/var/lib/mysql -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>hED522QC@pwDR<span class="nv">$n</span>+ -e <span class="nv">MYSQL_USER</span><span class="o">=</span>domjudge -e <span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>_D-F%X2KfKNSqCQB -e <span class="nv">MYSQL_DATABASE</span><span class="o">=</span>domjudge -p <span class="m">13306</span>:3306 mariadb --max-connections<span class="o">=</span><span class="m">1000</span>
-sleep <span class="m">10</span>
-
-<span class="c1"># Starting domserver container ....</span>
-docker run -d -v /sys/fs/cgroup:/sys/fs/cgroup:ro --link dj-mariadb:mariadb -e <span class="nv">MYSQL_HOST</span><span class="o">=</span>mariadb -e <span class="nv">MYSQL_USER</span><span class="o">=</span>domjudge -e <span class="nv">MYSQL_DATABASE</span><span class="o">=</span>domjudge -e <span class="nv">MYSQL_PASSWORD</span><span class="o">=</span>_D-F%X2KfKNSqCQB -e <span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>hED522QC@pwDR<span class="nv">$n</span>+ -p <span class="m">80</span>:80 --name domserver domjudge/domserver:latest
-sleep <span class="m">10</span>
-
-<span class="c1"># Starting judgehost-0 container ...</span>
-docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro --link domserver:domserver -e <span class="nv">DOMSERVER_BASEURL</span><span class="o">=</span>http://domserver/ -e <span class="nv">JUDGEDAEMON_PASSWORD</span><span class="o">=</span>Bng2TV2Nv%mPdfW! --name judgehost-0 --link domserver:domserver --hostname judgedaemon-0 -e <span class="nv">DAEMON_ID</span><span class="o">=</span><span class="m">0</span> domjudge/judgehost:latest
+                <h1 id="ammonite">Ammonite</h1>
+<h2 id="install">Install</h2>
+<div class="codehilite"><pre><span></span>sudo sh -c <span class="s1">&#39;(echo &quot;#!/usr/bin/env sh&quot; &amp;&amp; curl -L https://github.com/lihaoyi/Ammonite/releases/download/1.6.4/2.12-1.6.4) &gt; /usr/local/bin/amm &amp;&amp; chmod +x /usr/local/bin/amm&#39;</span> <span class="o">&amp;&amp;</span> amm
 </pre></div>
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul>
-<li><code>link</code> is used to link containes to each others, for example to be able to access the domserver from the judgehost.</li>
-<li>Even if the domejudge is down the web interface can't detect that and the status <strong>Active: yes</strong> is still there with a green flag (<strong>Status:OK</strong>), after some time it is replaced with the yellow flag (<strong>Status:Warning</strong>) then the red one (<strong>Status:Critical)</strong> but the status <strong>Active:yes</strong> is still there. if the judghost is booted up again the green flag (<strong>Status:OK</strong>) will showed up agin</li>
-<li>If we run another judgehost (with another <code>DAEMON_ID</code>), it will show up in the judgehosts web interface</li>
-<li><code>JUDGEDAEMON_PASSWORD</code>(defaults to <code>judgehost</code>) environment variable should be the password for the <code>JUDGEDAEMON_USERNAME</code> (defaults to <code>password</code>) user. This should be ready before starting the domjudge</li>
-<li>If the db container took down the web interface will go out of service</li>
-<li>When the db container is rebooted up :Boom: the web interface is reactive again and the data is also persitested.</li>
-</ul>
-</div>
+<h2 id="script-files">Script Files</h2>
+<p>Ammonite defines a format that allows you to load external scripts into the REPL; this can be used to save common functionality so it can be used at a later date. In the simplest case, a script file is simply a sequence of Scala statements, e.g.</p>
                 
                   
                 
@@ -721,41 +707,6 @@ docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro --link domserver:
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../docker/" title="Docker" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Docker
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../archiva/" title="Archiva" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Archiva
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

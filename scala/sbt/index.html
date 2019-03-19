@@ -145,119 +145,6 @@
         
       
       
-        
-
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  <li class="md-tabs__item">
-    
-      <a href="../.." title="Home" class="md-tabs__link">
-        Home
-      </a>
-    
-  </li>
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../high_output_management/SUMMARY/" title="High Output Managements" class="md-tabs__link">
-          High Output Managements
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../SUMMARY/" title="Scala" class="md-tabs__link md-tabs__link--active">
-          Scala
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../configurations/SUMMARY/" title="Configuration" class="md-tabs__link">
-          Configuration
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../big_ideas/SUMMARY/" title="Big Ideas about Startups" class="md-tabs__link">
-          Big Ideas about Startups
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../elasticsearch/SUMMARY/" title="Elasticserach" class="md-tabs__link">
-          Elasticserach
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../programming/SUMMARY/" title="Programming" class="md-tabs__link">
-          Programming
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../react/SUMMARY/" title="ReactJs" class="md-tabs__link">
-          ReactJs
-        </a>
-      
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-      
       <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
@@ -451,6 +338,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#install" title="Install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#packaging" title="Packaging" class="md-nav__link">
     Packaging
   </a>
@@ -548,6 +442,30 @@
   <li class="md-nav__item">
     <a href="../../configurations/archiva/" title="Archiva" class="md-nav__link">
       Archiva
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../configurations/kafka/" title="Kafka" class="md-nav__link">
+      Kafka
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../configurations/ammonite.md" title="Ammonite" class="md-nav__link">
+      Ammonite
     </a>
   </li>
 
@@ -782,6 +700,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#install" title="Install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#packaging" title="Packaging" class="md-nav__link">
     Packaging
   </a>
@@ -806,6 +731,14 @@
                 
                 
                 <h1 id="sbt">Sbt</h1>
+<h2 id="install">Install</h2>
+<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;deb https://dl.bintray.com/sbt/debian /&quot;</span> <span class="p">|</span> sudo tee -a /etc/apt/sources.list.d/sbt.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+sudo apt-get update
+sudo apt-get install sbt
+</pre></div>
+
+
 <h2 id="packaging">Packaging</h2>
 <p>using [sb-native-package]:</p>
 <p>in <code>build.sbt</code> : <code>enablePlugins(JavaAppPackaging, DockerPluging</code></p>
