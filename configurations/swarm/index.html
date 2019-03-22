@@ -315,6 +315,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../scala/ammonite/" title="Ammonite" class="md-nav__link">
+      Ammonite
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -324,10 +336,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Configuration
@@ -379,6 +393,105 @@
           
           
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Docker Swarm
+      </label>
+    
+    <a href="./" title="Docker Swarm" class="md-nav__link md-nav__link--active">
+      Docker Swarm
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-swarm" title="What is a swarm?" class="md-nav__link">
+    What is a swarm?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodes" title="Nodes" class="md-nav__link">
+    Nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services-and-tasks" title="Services and tasks" class="md-nav__link">
+    Services and tasks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-balancing" title="Load balancing" class="md-nav__link">
+    Load balancing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-machine" title="docker-machine" class="md-nav__link">
+    docker-machine
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-the-token" title="get the token" class="md-nav__link">
+    get the token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inspect-service" title="inspect service" class="md-nav__link">
+    inspect service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-a-docker-machine-shell-to-the-swarm-manager" title="Configure a docker-machine shell to the swarm manager" class="md-nav__link">
+    Configure a docker-machine shell to the swarm manager
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
 
   <li class="md-nav__item">
     <a href="../domejudge/" title="DomeJudge" class="md-nav__link">
@@ -417,8 +530,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../ammonite.md" title="Ammonite" class="md-nav__link">
-      Ammonite
+    <a href="../gcloud/" title="Google Cloud" class="md-nav__link">
+      Google Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../log4j2/" title="Log4j 2" class="md-nav__link">
+      Log4j 2
     </a>
   </li>
 
@@ -701,6 +826,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#configure-a-docker-machine-shell-to-the-swarm-manager" title="Configure a docker-machine shell to the swarm manager" class="md-nav__link">
+    Configure a docker-machine shell to the swarm manager
+  </a>
+  
+</li>
+      
       
       
       
@@ -773,6 +905,8 @@
 
 <p>Run <code>docker ps</code> on the node where the task is running to see details about the container for the task.</p>
 <p>instances doens't have access to the gcr, this is rather a weired behaviour.</p>
+<h2 id="configure-a-docker-machine-shell-to-the-swarm-manager">Configure a docker-machine shell to the swarm manager</h2>
+<p>So far, you’ve been wrapping Docker commands in docker-machine ssh to talk to the VMs. Another option is to run <code>docker-machine env &lt;machine&gt;</code> to get and run a command that configures your current shell to talk to the Docker daemon on the VM. This method works better for the next step because it allows you to use your local docker-compose.yml file to deploy the app “remotely” without having to copy it</p>
                 
                   
                 
@@ -789,6 +923,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../docker/" title="Docker" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Docker
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../domejudge/" title="DomeJudge" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                DomeJudge
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

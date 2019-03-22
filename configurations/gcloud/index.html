@@ -38,7 +38,7 @@
     
     
       
-        <title>Cheat sheet - Notes: Write to Ease Learning</title>
+        <title>Google Cloud - Notes: Write to Ease Learning</title>
       
     
     
@@ -102,7 +102,7 @@
               Notes: Write to Ease Learning
             </span>
             <span class="md-header-nav__topic">
-              Cheat sheet
+              Google Cloud
             </span>
           
         </div>
@@ -315,6 +315,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../scala/ammonite/" title="Ammonite" class="md-nav__link">
+      Ammonite
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -324,10 +336,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Configuration
@@ -381,6 +395,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../swarm/" title="Docker Swarm" class="md-nav__link">
+      Docker Swarm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../domejudge/" title="DomeJudge" class="md-nav__link">
       DomeJudge
     </a>
@@ -415,10 +441,74 @@
           
           
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Google Cloud
+      </label>
+    
+    <a href="./" title="Google Cloud" class="md-nav__link md-nav__link--active">
+      Google Cloud
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create" title="create" class="md-nav__link">
+    create
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-machine-type" title="set-machine-type" class="md-nav__link">
+    set-machine-type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stop" title="stop" class="md-nav__link">
+    stop
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
 
   <li class="md-nav__item">
-    <a href="../ammonite.md" title="Ammonite" class="md-nav__link">
-      Ammonite
+    <a href="../log4j2/" title="Log4j 2" class="md-nav__link">
+      Log4j 2
     </a>
   </li>
 
@@ -673,20 +763,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#docker-machine" title="docker-machine" class="md-nav__link">
-    docker-machine
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#get-the-token" title="get the token" class="md-nav__link">
-    get the token
-  </a>
-  
-</li>
-      
       
       
       
@@ -724,36 +800,6 @@
 <h2 id="stop">stop</h2>
 <div class="codehilite"><pre><span></span>gcloud compute instances stop swarm-manager
 </pre></div>
-
-
-<h2 id="docker-machine">docker-machine</h2>
-<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">GOOGLE_DISK_SIZE</span><span class="o">=</span><span class="m">10</span>
-<span class="nb">export</span> <span class="nv">GOOGLE_DISK_TYPE</span><span class="o">=</span>pd-standard
-<span class="nb">export</span> <span class="nv">GOOGLE_MACHINE_IMAGE</span><span class="o">=</span>https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-1804-bionic-v20190320
-<span class="nb">export</span> <span class="nv">GOOGLE_MACHINE_TYPE</span><span class="o">=</span>g1-small
-<span class="nb">export</span> <span class="nv">GOOGLE_NETWORK</span><span class="o">=</span>default
-<span class="nb">export</span> <span class="nv">GOOGLE_PREEMPTIBLE</span><span class="o">=</span><span class="nb">true</span>
-<span class="nb">export</span> <span class="nv">GOOGLE_PROJECT</span><span class="o">=</span>amanee-ec1eb
-<span class="nb">export</span> <span class="nv">GOOGLE_ZONE</span><span class="o">=</span>us-central1-a
-<span class="nb">export</span> <span class="nv">GOOGLE_USERNAME</span><span class="o">=</span>docker
-<span class="nb">export</span> <span class="nv">GOOGLE_USE_EXISTING</span><span class="o">=</span><span class="nb">true</span> <span class="c1"># try to find existing one, otherwise fail</span>
-<span class="c1"># export GOOGLE_USE_INTERNAL_IP=</span>
-<span class="c1"># export GOOGLE_ADDRESS=</span>
-<span class="c1"># export GOOGLE_SUBNETWORK=</span>
-<span class="c1"># export GOOGLE_TAGS=</span>
-</pre></div>
-
-
-<p>restarting a google cloud with ephemeral ip address cuases docker-machine to fail, running <code>docker-machine regenerate-certs swarm-worker1</code> fixes the issue but it restarts the docker daemon which might stop running containers.</p>
-<p>restarting also causes swarm to be broken, we need to <code>leave</code> and re<code>join</code> the nodes.</p>
-<h2 id="get-the-token">get the token</h2>
-<div class="codehilite"><pre><span></span>docker swarm join-token worker
-</pre></div>
-
-
-<p>Response:</p>
-<div class="codehilite"><pre><span></span>docker swarm join --token SWMTKN-1-29na4ee9gsnkt0zn6artrtx2bgb2ajeev96k1bhxdxo7xl5gpi-8o8uf1thlf5c31qrrosuppn7d 10.128.0.8:2377
-</pre></div>
                 
                   
                 
@@ -770,6 +816,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../kafka/" title="Kafka" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Kafka
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../log4j2/" title="Log4j 2" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Log4j 2
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

@@ -315,6 +315,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../scala/ammonite/" title="Ammonite" class="md-nav__link">
+      Ammonite
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -373,6 +385,18 @@
   <li class="md-nav__item">
     <a href="../docker/" title="Docker" class="md-nav__link">
       Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../swarm/" title="Docker Swarm" class="md-nav__link">
+      Docker Swarm
     </a>
   </li>
 
@@ -471,8 +495,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../ammonite.md" title="Ammonite" class="md-nav__link">
-      Ammonite
+    <a href="../gcloud/" title="Google Cloud" class="md-nav__link">
+      Google Cloud
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../log4j2/" title="Log4j 2" class="md-nav__link">
+      Log4j 2
     </a>
   </li>
 
@@ -755,19 +791,18 @@
 </pre></div>
 
 
+<div class="admonition danger">
+<p class="admonition-title">Required for the judgehosts to work</p>
+<p>Make sure you change the password of the <strong>judgehost</strong> account in the webinterface to something and write down the value into the <code>JUDGEDAEMON_PASSWORD</code> environment variable, otherwise the <strong>judgehosts</strong> will fail to start.</p>
+</div>
 <h2 id="starting-judgehost-0-container">Starting judgehost-0 container ...</h2>
 <div class="codehilite"><pre><span></span>docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro --link domserver:domserver -e <span class="nv">DOMSERVER_BASEURL</span><span class="o">=</span>http://domserver/ -e <span class="nv">JUDGEDAEMON_PASSWORD</span><span class="o">=</span>Bng2TV2Nv%mPdfW! --name judgehost-0 --link domserver:domserver --hostname judgedaemon-0 -e <span class="nv">DAEMON_ID</span><span class="o">=</span><span class="m">0</span> domjudge/judgehost:latest
 </pre></div>
 
 
-<div class="admonition warning">
-<p class="admonition-title">Required for the judgehosts to work</p>
-<p>Make sure you change the password of the <strong>judgehost</strong> account in the webinterface to something and write down the value into the <code>JUDGEDAEMON_PASSWORD</code> environment variable.</p>
-</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
-<li><code>link</code> is used to link containes to each others, for example to be able to access the domserver from the judgehost.</li>
 <li>Even if the domejudge is down the web interface can't detect that and the status <strong>Active: yes</strong> is still there with a green flag (<strong>Status:OK</strong>), after some time it is replaced with the yellow flag (<strong>Status:Warning</strong>) then the red one (<strong>Status:Critical)</strong> but the status <strong>Active:yes</strong> is still there. if the judghost is booted up again the green flag (<strong>Status:OK</strong>) will showed up agin</li>
 <li>If we run another judgehost (with another <code>DAEMON_ID</code>), it will show up in the judgehosts web interface</li>
 <li><code>JUDGEDAEMON_USERNAME</code>(defaults to <code>judgehost</code>) environment variable should be the password for the <code>JUDGEDAEMON_PASSWORD</code> (defaults to <code>password</code>) user. This should be ready before starting the domjudge</li>
@@ -795,7 +830,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../docker/" title="Docker" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../swarm/" title="Docker Swarm" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -804,7 +839,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Docker
+                Docker Swarm
               </span>
             </div>
           </a>

@@ -46,6 +46,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://mohammedi-haroune.github.io/notes/scala/ammonite/</loc>
+     <lastmod>2019-03-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://mohammedi-haroune.github.io/notes/configurations/SUMMARY/</loc>
      <lastmod>2019-03-22</lastmod>
      <changefreq>daily</changefreq>
@@ -57,6 +62,11 @@
     </url>
     <url>
      <loc>https://mohammedi-haroune.github.io/notes/configurations/docker/</loc>
+     <lastmod>2019-03-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://mohammedi-haroune.github.io/notes/configurations/swarm/</loc>
      <lastmod>2019-03-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -76,8 +86,13 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://mohammedi-haroune.github.io/notes/configurations/gcloud/</loc>
+     <lastmod>2019-03-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://mohammedi-haroune.github.io/notes/configurations/log4j2/</loc>
+     <lastmod>2019-03-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
