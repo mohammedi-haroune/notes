@@ -1,18 +1,18 @@
 # Docker
 
 ## Install docker
-```
+```bash
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 ```
 
 To run docker commands without sudo
-```
+```bash
 sudo usermod -aG docker your-user
 ```
 
 !!! note
-You should logout and log back in in order for this to take effect, otherwise run commands with sudo
+    You should logout and log back in in order for this to take effect, otherwise run commands with sudo
 
 ## Access gcr (google cloud registery, where our docker images live :p)
 If you are inside a gcp vm you don't have to log in to your google acount an application credentials is provided and will be utilized by default
@@ -32,31 +32,10 @@ sudo apt-get update && sudo apt-get install google-cloud-sdk
 like login account and default project
 ```bash
 gcloud init
+
 ```
-
-## Docker swarm
-
-### Init
+## Portainer
+Portainer is a dashboard for docker
 ```bash
-docker swarm init
-```
-
-### Deploy
-```bash
-docker stack deploy -c docker-compose.yml <stack-name>
-```
-
-### List services
-```bash
-docker service ls
-```
-
-### You can see the tasks (containers) that belong to this services with
-```bash
-docker service ps <service-name>
-```
-
-### Remove
-```bash
-docker stack rm <stack-name>
+docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
 ```
