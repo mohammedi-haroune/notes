@@ -270,6 +270,43 @@ To use MDC just call the `MDC.put` method and refer to the variable with `%key` 
   </root>
 </configuration>
 ```
+## Size and time based rolling policy
+
+```bash
+<configuration>
+  <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>mylog.txt</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <!-- rollover daily -->
+      <fileNamePattern>mylog-%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
+       <!-- each file should be at most 100MB, keep 60 days worth of history, but at most 20GB -->
+       <maxFileSize>100MB</maxFileSize>    
+       <!-- if maxHistory is not set: 'maxHistory' is not set, ignoring 'totalSizeCap' option with value [10 KB] -->
+       <maxHistory>60</maxHistory>
+       <totalSizeCap>20GB</totalSizeCap>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%msg%n</pattern>
+    </encoder>
+  </appender>
 
 
+  <root level="DEBUG">
+    <appender-ref ref="ROLLING" />
+  </root>
+
+</configuration>
+```
+
+!!! note
+    `totalSizeCap` is ignored if `maxHistory` is not set
+
+## Compression
+To enable compression just name your file `*.gz` or `*.zip` and logback will do that for you
+
+!!! example
+    file property set to `/wombat/foo.txt`: During November 23rd, 2009, logging output will go to the file `/wombat/foo.txt`. At midnight that file will be compressed and renamed as `/wombat/foo.2009-11-23.gz`. A new `/wombat/foo.txt` file will be created where logging output will go for the rest of November 24rd. At midnight November 24th, `/wombat/foo.txt` will be compressed and renamed as `/wombat/foo.2009-11-24.gz` and so on.
+
+!!! note
+    File compresion is not support in [prudent mode](https://logback.qos.ch/manual/appenders.html#prudentWithRolling)
 
