@@ -6,8 +6,8 @@ theme:
   font:
     text: 'Product sans'
     code: 'Source code pro'
-  feature:
-    tabs: true
+  # feature:
+  #   tabs: true
 extra:
   social:
     - type: 'github'
@@ -32,12 +32,17 @@ nav:
     - 'Summary': 'scala/SUMMARY.md'
     - 'Scala': 'scala/chapter1.md'
     - 'Sbt': 'scala/sbt.md'
+    - 'Ammonite': 'scala/ammonite.md'
 - Configuration:
     - 'Summary': 'configurations/SUMMARY.md'
     - 'Log back': 'configurations/logback.md'
     - 'Docker': 'configurations/docker.md'
+    - 'Docker Swarm': 'configurations/swarm.md'
     - 'DomeJudge': 'configurations/domejudge.md'
     - 'Archiva': 'configurations/archiva.md'
+    - 'Kafka': 'configurations/kafka.md'
+    - 'Google Cloud': 'configurations/gcloud.md'
+    - 'Log4j 2': 'configurations/log4j2.md'
 - Big Ideas about Startups:
     - 'Summary': 'big_ideas/SUMMARY.md'
     - 'Startups': 'big_ideas/chapter1.md'
