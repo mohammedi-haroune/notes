@@ -336,18 +336,54 @@
       
       
 
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/firebase/" title="Firebase" class="md-nav__link">
+      Firebase
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-5">
       Configuration
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         Configuration
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -532,13 +568,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
-    <label class="md-nav__link" for="nav-5">
+    <label class="md-nav__link" for="nav-6">
       Big Ideas about Startups
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
+      <label class="md-nav__title" for="nav-6">
         Big Ideas about Startups
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -580,13 +616,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
-    <label class="md-nav__link" for="nav-6">
+    <label class="md-nav__link" for="nav-7">
       Elasticserach
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
+      <label class="md-nav__title" for="nav-7">
         Elasticserach
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -628,13 +664,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
-    <label class="md-nav__link" for="nav-7">
+    <label class="md-nav__link" for="nav-8">
       Programming
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
+      <label class="md-nav__title" for="nav-8">
         Programming
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -688,13 +724,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
-    <label class="md-nav__link" for="nav-8">
+    <label class="md-nav__link" for="nav-9">
       ReactJs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
+      <label class="md-nav__title" for="nav-9">
         ReactJs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -813,6 +849,16 @@
 <h2 id="list-the-consumer-groups-known-to-kafka">List the consumer groups known to Kafka</h2>
 <div class="codehilite"><pre><span></span>kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
 </pre></div>
+
+
+<h1 id="kafka-consumers-reading-data-from-kafka">Kafka Consumers: Reading Data from Kafka</h1>
+<h2 id="kafka-consumer-concepts">Kafka Consumer Concepts</h2>
+<h3 id="consumers-and-consumer-groups">Consumers and Consumer Groups</h3>
+<p>Kafka consumers are typically part of a <code>consumer group</code>. When multiple consumers are subscribed to a topic and belong to the same consumer group, each consumer in the group will receive messages from a different subset of the partitions in the topic.</p>
+<p>If we add more consumers to a single group with a single topic than we have partitions, some of the consumers will be idle and get no messages at all.</p>
+<p>To summarize, you create a new consumer group for each application that needs all the messages from one or more topics. You add consumers to an existing consumer group to scale the reading and processing of messages from the topics, so each additional consumer in a group will only get a subset of the messages.</p>
+<h3 id="consumer-groups-and-partition-rebalance">Consumer Groups and Partition Rebalance</h3>
+<p>Rebalance is the process of changing the ownership of a topic from consumer to another, it happens when a consumer cashes, when a new consumer start consuming or when the topic is modified (eg. the number of partitions is modified), during rebalance the entire consumer groups can't consumer the messages, it causes a short window of <strong>unavailability</strong>.</p>
                 
                   
                 

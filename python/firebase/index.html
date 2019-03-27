@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://mohammedi-haroune.github.io/notes/configurations/swarm/">
+        <link rel="canonical" href="https://mohammedi-haroune.github.io/notes/python/firebase/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Docker Swarm - Notes: Write to Ease Learning</title>
+        <title>Firebase - Notes: Write to Ease Learning</title>
       
     
     
@@ -77,7 +77,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#docker-swarm" tabindex="1" class="md-skip">
+      <a href="#python-firebase-sdk" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -102,7 +102,7 @@
               Notes: Write to Ease Learning
             </span>
             <span class="md-header-nav__topic">
-              Docker Swarm
+              Firebase
             </span>
           
         </div>
@@ -336,10 +336,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Python
@@ -355,11 +357,70 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../python/firebase/" title="Firebase" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Firebase
+      </label>
+    
+    <a href="./" title="Firebase" class="md-nav__link md-nav__link--active">
       Firebase
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-an-app" title="Initialize an app" class="md-nav__link">
+    Initialize an app
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-data" title="Get Data" class="md-nav__link">
+    Get Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listen-for-events" title="Listen for events" class="md-nav__link">
+    Listen for events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snnipets" title="Snnipets" class="md-nav__link">
+    Snnipets
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -372,12 +433,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       Configuration
@@ -395,7 +454,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../SUMMARY/" title="Summary" class="md-nav__link">
+    <a href="../../configurations/SUMMARY/" title="Summary" class="md-nav__link">
       Summary
     </a>
   </li>
@@ -407,7 +466,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../logback/" title="Log back" class="md-nav__link">
+    <a href="../../configurations/logback/" title="Log back" class="md-nav__link">
       Log back
     </a>
   </li>
@@ -419,7 +478,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../docker/" title="Docker" class="md-nav__link">
+    <a href="../../configurations/docker/" title="Docker" class="md-nav__link">
       Docker
     </a>
   </li>
@@ -429,139 +488,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Docker Swarm
-      </label>
-    
-    <a href="./" title="Docker Swarm" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../configurations/swarm/" title="Docker Swarm" class="md-nav__link">
       Docker Swarm
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-a-swarm" title="What is a swarm?" class="md-nav__link">
-    What is a swarm?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nodes" title="Nodes" class="md-nav__link">
-    Nodes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#services-and-tasks" title="Services and tasks" class="md-nav__link">
-    Services and tasks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#load-balancing" title="Load balancing" class="md-nav__link">
-    Load balancing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-machine" title="docker-machine" class="md-nav__link">
-    docker-machine
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#get-the-token" title="get the token" class="md-nav__link">
-    get the token
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inspect-service" title="inspect service" class="md-nav__link">
-    inspect service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-swarm_1" title="Docker swarm" class="md-nav__link">
-    Docker swarm
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#init" title="Init" class="md-nav__link">
-    Init
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deploy" title="Deploy" class="md-nav__link">
-    Deploy
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove" title="Remove" class="md-nav__link">
-    Remove
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scale" title="Scale" class="md-nav__link">
-    Scale
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-a-docker-machine-shell-to-the-swarm-manager" title="Configure a docker-machine shell to the swarm manager" class="md-nav__link">
-    Configure a docker-machine shell to the swarm manager
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -571,7 +502,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../domejudge/" title="DomeJudge" class="md-nav__link">
+    <a href="../../configurations/domejudge/" title="DomeJudge" class="md-nav__link">
       DomeJudge
     </a>
   </li>
@@ -583,7 +514,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../archiva/" title="Archiva" class="md-nav__link">
+    <a href="../../configurations/archiva/" title="Archiva" class="md-nav__link">
       Archiva
     </a>
   </li>
@@ -595,7 +526,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../kafka/" title="Kafka" class="md-nav__link">
+    <a href="../../configurations/kafka/" title="Kafka" class="md-nav__link">
       Kafka
     </a>
   </li>
@@ -607,7 +538,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../gcloud/" title="Google Cloud" class="md-nav__link">
+    <a href="../../configurations/gcloud/" title="Google Cloud" class="md-nav__link">
       Google Cloud
     </a>
   </li>
@@ -619,7 +550,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../log4j2/" title="Log4j 2" class="md-nav__link">
+    <a href="../../configurations/log4j2/" title="Log4j 2" class="md-nav__link">
       Log4j 2
     </a>
   </li>
@@ -855,98 +786,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-a-swarm" title="What is a swarm?" class="md-nav__link">
-    What is a swarm?
+  <a href="#initialize-an-app" title="Initialize an app" class="md-nav__link">
+    Initialize an app
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#nodes" title="Nodes" class="md-nav__link">
-    Nodes
+  <a href="#get-data" title="Get Data" class="md-nav__link">
+    Get Data
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#services-and-tasks" title="Services and tasks" class="md-nav__link">
-    Services and tasks
+  <a href="#listen-for-events" title="Listen for events" class="md-nav__link">
+    Listen for events
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#load-balancing" title="Load balancing" class="md-nav__link">
-    Load balancing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-machine" title="docker-machine" class="md-nav__link">
-    docker-machine
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#get-the-token" title="get the token" class="md-nav__link">
-    get the token
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inspect-service" title="inspect service" class="md-nav__link">
-    inspect service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-swarm_1" title="Docker swarm" class="md-nav__link">
-    Docker swarm
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#init" title="Init" class="md-nav__link">
-    Init
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deploy" title="Deploy" class="md-nav__link">
-    Deploy
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remove" title="Remove" class="md-nav__link">
-    Remove
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scale" title="Scale" class="md-nav__link">
-    Scale
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-a-docker-machine-shell-to-the-swarm-manager" title="Configure a docker-machine shell to the swarm manager" class="md-nav__link">
-    Configure a docker-machine shell to the swarm manager
+  <a href="#snnipets" title="Snnipets" class="md-nav__link">
+    Snnipets
   </a>
   
 </li>
@@ -968,84 +830,39 @@
               
                 
                 
-                <h1 id="docker-swarm">Docker Swarm</h1>
-<h2 id="what-is-a-swarm">What is a swarm?</h2>
-<p>A swarm consists of multiple Docker hosts which run in swarm mode and act as managers (to manage membership and delegation) and workers (which run swarm services).</p>
-<p>A key difference between standalone containers and swarm services is that only swarm managers can manage a swarm</p>
-<h2 id="nodes">Nodes</h2>
-<p>A node is an instance of the Docker engine participating in the swarm. You can also think of this as a Docker node. You can run one or more nodes on a single physical computer or cloud server.</p>
-<p>To deploy your application to a swarm, you submit a service definition to a manager node. The manager node dispatches units of work called tasks to worker nodes.</p>
-<h2 id="services-and-tasks">Services and tasks</h2>
-<p>A <strong>service</strong> is the definition of the tasks to execute on the manager or worker nodes.</p>
-<p>A <strong>task</strong> carries a Docker container and the commands to run inside the container. It is the atomic scheduling unit of swarm.</p>
-<h2 id="load-balancing">Load balancing</h2>
-<p>The swarm manager uses <strong>ingress load balancing</strong> to expose the services you want to make available externally to the swarm.</p>
-<p>Swarm mode has an internal DNS component that automatically assigns each service in the swarm a DNS entry.</p>
-<h2 id="docker-machine">docker-machine</h2>
-<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">GOOGLE_DISK_SIZE</span><span class="o">=</span><span class="m">10</span>
-<span class="nb">export</span> <span class="nv">GOOGLE_DISK_TYPE</span><span class="o">=</span>pd-standard
-<span class="nb">export</span> <span class="nv">GOOGLE_MACHINE_IMAGE</span><span class="o">=</span>https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-1804-bionic-v20190320
-<span class="nb">export</span> <span class="nv">GOOGLE_MACHINE_TYPE</span><span class="o">=</span>g1-small
-<span class="nb">export</span> <span class="nv">GOOGLE_NETWORK</span><span class="o">=</span>default
-<span class="nb">export</span> <span class="nv">GOOGLE_PREEMPTIBLE</span><span class="o">=</span><span class="nb">true</span>
-<span class="nb">export</span> <span class="nv">GOOGLE_PROJECT</span><span class="o">=</span>amanee-ec1eb
-<span class="nb">export</span> <span class="nv">GOOGLE_ZONE</span><span class="o">=</span>us-central1-a
-<span class="nb">export</span> <span class="nv">GOOGLE_USERNAME</span><span class="o">=</span>docker
-<span class="nb">export</span> <span class="nv">GOOGLE_USE_EXISTING</span><span class="o">=</span><span class="nb">true</span> <span class="c1"># try to find existing one, otherwise fail</span>
-<span class="c1"># export GOOGLE_USE_INTERNAL_IP=</span>
-<span class="c1"># export GOOGLE_ADDRESS=</span>
-<span class="c1"># export GOOGLE_SUBNETWORK=</span>
-<span class="c1"># export GOOGLE_TAGS=</span>
+                <h1 id="python-firebase-sdk"><a href="https://firebase.google.com/docs/reference/admin/python/">Python Firebase SDK</a></h1>
+<h2 id="initialize-an-app">Initialize an app</h2>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">firebase_admin</span>
+<span class="kn">from</span> <span class="nn">firebase_admin</span> <span class="kn">import</span> <span class="n">credentials</span>
+<span class="n">cred_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;FIREBASE_CREDENTIALS&quot;</span><span class="p">)</span>
+<span class="n">database_url</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;FIREBASE_DATABASE&quot;</span><span class="p">)</span>
+<span class="n">cred</span> <span class="o">=</span> <span class="n">credentials</span><span class="o">.</span><span class="n">Certificate</span><span class="p">(</span><span class="n">cred_file</span><span class="p">)</span>
+<span class="n">default_app</span> <span class="o">=</span> <span class="n">firebase_admin</span><span class="o">.</span><span class="n">initialize_app</span><span class="p">(</span><span class="n">cred</span><span class="p">,</span> <span class="p">{</span>
+     <span class="s1">&#39;databaseURL&#39;</span><span class="p">:</span> <span class="n">database_url</span>
+<span class="p">})</span>
 </pre></div>
 
 
-<p>restarting a google cloud with ephemeral ip address cuases docker-machine to fail, running <code>docker-machine regenerate-certs swarm-worker1</code> fixes the issue but it restarts the docker daemon which might stop running containers.</p>
-<p>restarting also causes swarm to be broken, we need to <code>leave</code> and re<code>join</code> the nodes.</p>
-<h2 id="get-the-token">get the token</h2>
-<div class="codehilite"><pre><span></span>docker swarm join-token worker
+<h2 id="get-data">Get Data</h2>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">firebase_admin</span> <span class="kn">import</span> <span class="n">db</span>
+<span class="n">watches</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">reference</span><span class="p">(</span><span class="s1">&#39;/watches&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
 </pre></div>
 
 
-<p>Response:</p>
-<div class="codehilite"><pre><span></span>docker swarm join --token SWMTKN-1-29na4ee9gsnkt0zn6artrtx2bgb2ajeev96k1bhxdxo7xl5gpi-8o8uf1thlf5c31qrrosuppn7d <span class="m">10</span>.128.0.8:2377
+<h2 id="listen-for-events">Listen for events</h2>
+<div class="codehilite"><pre><span></span><span class="n">watches_ref</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">reference</span><span class="p">(</span><span class="s1">&#39;/watches&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">event_type</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">watches_ref</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="n">process</span><span class="p">)</span>
 </pre></div>
 
 
-<h2 id="inspect-service">inspect service</h2>
-<div class="codehilite"><pre><span></span>docker service inspect --pretty &lt;SERVICE-ID&gt;
-</pre></div>
-
-
-<p>To see which nodes are running the service:</p>
-<div class="codehilite"><pre><span></span>docker service ps &lt;SERVICE-ID&gt;
-</pre></div>
-
-
-<p>Run <code>docker ps</code> on the node where the task is running to see details about the container for the task.</p>
-<p>instances doens't have access to the gcr, this is rather a weired behaviour.</p>
-<h2 id="docker-swarm_1">Docker swarm</h2>
-<h3 id="init">Init</h3>
-<div class="codehilite"><pre><span></span>docker swarm init
-</pre></div>
-
-
-<h3 id="deploy">Deploy</h3>
-<div class="codehilite"><pre><span></span>docker stack deploy -c docker-compose.yml &lt;stack-name&gt;
-</pre></div>
-
-
-<h3 id="remove">Remove</h3>
-<div class="codehilite"><pre><span></span>docker stack rm &lt;stack-name&gt;
-</pre></div>
-
-
-<h3 id="scale">Scale</h3>
-<div class="codehilite"><pre><span></span>docker service scale &lt;service-name&gt;<span class="o">=</span>&lt;number&gt;
-</pre></div>
-
-
-<h2 id="configure-a-docker-machine-shell-to-the-swarm-manager">Configure a docker-machine shell to the swarm manager</h2>
-<p>So far, you’ve been wrapping Docker commands in docker-machine ssh to talk to the VMs. Another option is to run <code>docker-machine env &lt;machine&gt;</code> to get and run a command that configures your current shell to talk to the Docker daemon on the VM. This method works better for the next step because it allows you to use your local docker-compose.yml file to deploy the app “remotely” without having to copy it</p>
+<h2 id="snnipets">Snnipets</h2>
+<ul>
+<li><a href="https://github.com/firebase/firebase-admin-python/blob/master/snippets/database/index.py">Database queries</a></li>
+</ul>
                 
                   
                 
@@ -1066,7 +883,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../docker/" title="Docker" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../scala/ammonite/" title="Ammonite" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1075,19 +892,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Docker
+                Ammonite
               </span>
             </div>
           </a>
         
         
-          <a href="../domejudge/" title="DomeJudge" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../configurations/SUMMARY/" title="Summary" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                DomeJudge
+                Summary
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
