@@ -488,6 +488,80 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#databases" title="Databases" class="md-nav__link">
+    Databases
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurations" title="Configurations" class="md-nav__link">
+    Configurations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models" title="Models" class="md-nav__link">
+    Models
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#appmodelspy" title="app/models.py" class="md-nav__link">
+    app/models.py
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-migrations" title="Database Migrations" class="md-nav__link">
+    Database Migrations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-migrations-repo" title="Create the migrations repo" class="md-nav__link">
+    Create the migrations repo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-automatic-migrations" title="Generate automatic migrations" class="md-nav__link">
+    Generate automatic migrations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downgrade" title="Downgrade" class="md-nav__link">
+    Downgrade
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#blueprints" title="Blueprints" class="md-nav__link">
     Blueprints
   </a>
@@ -914,6 +988,80 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#databases" title="Databases" class="md-nav__link">
+    Databases
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurations" title="Configurations" class="md-nav__link">
+    Configurations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models" title="Models" class="md-nav__link">
+    Models
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#appmodelspy" title="app/models.py" class="md-nav__link">
+    app/models.py
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-migrations" title="Database Migrations" class="md-nav__link">
+    Database Migrations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-migrations-repo" title="Create the migrations repo" class="md-nav__link">
+    Create the migrations repo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-automatic-migrations" title="Generate automatic migrations" class="md-nav__link">
+    Generate automatic migrations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#downgrade" title="Downgrade" class="md-nav__link">
+    Downgrade
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#blueprints" title="Blueprints" class="md-nav__link">
     Blueprints
   </a>
@@ -987,6 +1135,71 @@
                 
                 
                 <h1 id="flask">Flask</h1>
+<h2 id="databases">Databases</h2>
+<p>Flask-SQLAlchemy, an extension that provides a Flask-friendly wrapper to the popular SQLAlchemy package, which is an Object Relational Mapper or ORM.</p>
+<div class="codehilite"><pre><span></span>pip install flask-sqlalchemy
+</pre></div>
+
+
+<p>Flask-Migrate a database migration framework for SQLAlchemy.</p>
+<div class="codehilite"><pre><span></span>pip install flask-migrate
+</pre></div>
+
+
+<h3 id="configurations"><a href="http://flask-sqlalchemy.pocoo.org/2.3/config/#configuration-keys">Configurations</a></h3>
+<p>Most important configuration is <code>SQLALCHEMY_DATABASE_URI</code></p>
+<h3 id="models">Models</h3>
+<h4 id="appmodelspy"><code>app/models.py</code></h4>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">db</span>
+
+<span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">64</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">120</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">password_hash</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">128</span><span class="p">))</span>
+    <span class="n">posts</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">relationship</span><span class="p">(</span><span class="s1">&#39;Post&#39;</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="s1">&#39;author&#39;</span><span class="p">,</span> <span class="n">lazy</span><span class="o">=</span><span class="s1">&#39;dynamic&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;&lt;User {}&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Post</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">140</span><span class="p">))</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">DateTime</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">)</span>
+    <span class="n">user_id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;user.id&#39;</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;&lt;Post {}&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+</pre></div>
+
+
+<h3 id="database-migrations">Database Migrations</h3>
+<h4 id="create-the-migrations-repo">Create the migrations repo</h4>
+<div class="codehilite"><pre><span></span>flask db init
+</pre></div>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>FLASK_APP</code> should be set for this command to execute properly</p>
+</div>
+<h4 id="generate-automatic-migrations">Generate automatic migrations</h4>
+<div class="codehilite"><pre><span></span>flask db migrate
+</pre></div>
+
+
+<p>We can provide a <code>-m</code> optional argument that adds a short descriptive text to the migration.</p>
+<div class="codehilite"><pre><span></span>flask db migrate -m <span class="s2">&quot;added users table&quot;</span>
+</pre></div>
+
+
+<p>The <code>flask db migrate</code> command does not make any changes to the database, it just generates the migration script. To apply the changes to the database, the <code>flask db upgrade</code> command must be used.</p>
+<h4 id="downgrade">Downgrade</h4>
+<div class="codehilite"><pre><span></span>flask db downgrade
+</pre></div>
+
+
 <h2 id="blueprints">Blueprints</h2>
 <p>Blueprints is the way flask achieve modularity, reusablity and extensibility.</p>
 <p>Here's a simple hello world blueprint.</p>
