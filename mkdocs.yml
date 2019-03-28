@@ -1,13 +1,17 @@
 site_name: 'Notes: Write to Ease Learning'
 site_url: 'https://mohammedi-haroune.github.io/notes/'
+repo_url: 'https://github.com/mohammedi-haroune/notes'
+repo_name: 'Github'
+site_description: 'Notes: Writing to ease learning'
+site_author: 'MOHAMMEDI Haroune'
+google_analytics: ['UA-137032230-1', 'auto']
 
 theme:
   name: 'material'
   font:
-    text: 'Product sans'
-    code: 'Source code pro'
-  # feature:
-  #   tabs: true
+    text: 'Montserrat'
+    code: 'Source Code Pro'
+
 extra:
   social:
     - type: 'github'
@@ -16,10 +20,18 @@ extra:
       link: 'https://stackoverflow.com/users/7573221/haroun-mohammedi'
     - type: 'linkedin'
       link: 'https://linkedin.com/in/mohammedi-haroune-3b3836170'
+  search:
+    language: ['en']
+  disqus: 'notes-6'
+
+plugins:
+  - search:
+      lang: ['en']
 
 markdown_extensions:
   - codehilite
   - admonition
+
 nav:
 - Home: 'index.md'
 - High Output Managements:
@@ -33,6 +45,9 @@ nav:
     - 'Scala': 'scala/chapter1.md'
     - 'Sbt': 'scala/sbt.md'
     - 'Ammonite': 'scala/ammonite.md'
+- Python:
+    - 'Firebase': 'python/firebase.md'
+    - 'Flask': 'python/flask.md'
 - Configuration:
     - 'Summary': 'configurations/SUMMARY.md'
     - 'Log back': 'configurations/logback.md'
@@ -56,4 +71,3 @@ nav:
 - ReactJs:
     - 'Summary': 'react/SUMMARY.md'
     - 'Main Concepts': 'react/main_concepts.md'
- 
