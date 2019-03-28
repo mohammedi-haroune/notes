@@ -1,0 +1,55 @@
+site_name: 'Notes: Write to Ease Learning'
+site_url: 'https://mohammedi-haroune.github.io/notes/'
+
+theme:
+  name: 'material'
+  font:
+    text: 'Product sans'
+    code: 'Source code pro'
+  feature:
+    tabs: false
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/mohammedi-haroune'
+    - type: 'stack-overflow'
+      link: 'https://stackoverflow.com/users/7573221/haroun-mohammedi'
+    - type: 'linkedin'
+      link: 'https://linkedin.com/in/mohammedi-haroune-3b3836170'
+
+markdown_extensions:
+  - codehilite
+  - admonition
+nav:
+- Home: 'index.md'
+- High Output Managements:
+    - 'Summary': 'high_output_management/SUMMARY.md'
+    - 'Introduction': 'high_output_management/introduction.md'
+    - 'The Basics of Production Delivering a Breakfast': 'high_output_management/chapter1.md'
+    - 'Managing the Breakfast Factory': 'high_output_management/chapter2.md'
+    - 'Managerial Leverage': 'high_output_management/chapter3.md'
+- Scala:
+    - 'Summary': 'scala/SUMMARY.md'
+    - 'Scala': 'scala/chapter1.md'
+    - 'Sbt': 'scala/sbt.md'
+- Configuration:
+    - 'Summary': 'configurations/SUMMARY.md'
+    - 'Log back': 'configurations/logback.md'
+    - 'Docker': 'configurations/docker.md'
+    - 'DomeJudge': 'configurations/domejudge.md'
+    - 'Archiva': 'configurations/archiva.md'
+- Big Ideas about Startups:
+    - 'Summary': 'big_ideas/SUMMARY.md'
+    - 'Startups': 'big_ideas/chapter1.md'
+- Elasticserach:
+    - 'Summary': 'elasticsearch/SUMMARY.md'
+    - 'Getting Started': 'elasticsearch/chapter1.md'
+- Programming:
+    - 'Summary': 'programming/SUMMARY.md'
+    - 'Chpater 1': 'programming/chapter1.md'
+    - 'Spacemacs': 'programming/spacemacs.md'
+- ReactJs:
+    - 'Summary': 'react/SUMMARY.md'
+    - 'Main Concepts': 'react/main_concepts.md'
+- Networking:
+    - 'TCP IP Model Mindmap': 'networking/tcp-ip-model-mindmap.md'
