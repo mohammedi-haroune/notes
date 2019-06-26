@@ -902,51 +902,51 @@
 <li>An external disk created and attached to that VMs</li>
 </ol>
 <p>The commands bellow will format the disk, mount it and make it mounted automatically on boot.</p>
-<ol>
+<ul>
 <li>use the <code>lsblk</code> command to list the disks that are attached to your instance and find the disk that you want to format and mount.</li>
-</ol>
+</ul>
 <div class="codehilite"><pre><span></span>sudo lsblk
 </pre></div>
 
 
-<ol>
+<ul>
 <li>Format the disk. You can use any file format that you need, but the most simple method is to format the entire disk with a single ext4 file system and no partition table</li>
-</ol>
+</ul>
 <div class="codehilite"><pre><span></span>sudo mkfs.ext4 -m <span class="m">0</span> -F -E <span class="nv">lazy_itable_init</span><span class="o">=</span><span class="m">0</span>,lazy_journal_init<span class="o">=</span><span class="m">0</span>,discard /dev/<span class="o">[</span>DEVICE_ID<span class="o">]</span>
 </pre></div>
 
 
-<ol>
+<ul>
 <li>Create a directory</li>
-</ol>
+</ul>
 <div class="codehilite"><pre><span></span>sudo mkdir -p /mnt/disks/<span class="o">[</span>MNT_DIR<span class="o">]</span>
 </pre></div>
 
 
-<ol>
+<ul>
 <li>Use the <code>mount</code> tool to mount the disk to the instance with the discard option enabled</li>
-</ol>
+</ul>
 <div class="codehilite"><pre><span></span>sudo mount -o discard,defaults /dev/<span class="o">[</span>DEVICE_ID<span class="o">]</span> /mnt/disks/<span class="o">[</span>MNT_DIR<span class="o">]</span>
 </pre></div>
 
 
-<ol>
+<ul>
 <li>Configure read and write permissions on the device</li>
-</ol>
+</ul>
 <div class="codehilite"><pre><span></span>sudo chmod a+w /mnt/disks/<span class="o">[</span>MNT_DIR<span class="o">]</span>
 </pre></div>
 
 
-<ol>
+<ul>
 <li>Use the <code>blkid</code> command to find the UUID for the zonal persistent disk</li>
-</ol>
+</ul>
 <div class="codehilite"><pre><span></span>sudo blkid /dev/<span class="o">[</span>DEVICE_ID<span class="o">]</span>
 </pre></div>
 
 
-<ol>
+<ul>
 <li>Open the <code>/etc/fstab</code> file in a text editor and create an entry that includes the UUID. For example:</li>
-</ol>
+</ul>
 <div class="codehilite"><pre><span></span><span class="nv">UUID</span><span class="o">=[</span>UUID_VALUE<span class="o">]</span> /mnt/disks/<span class="o">[</span>MNT_DIR<span class="o">]</span> ext4 discard,defaults,nofail <span class="m">0</span> <span class="m">2</span>
 </pre></div>
 
