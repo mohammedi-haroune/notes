@@ -13,7 +13,7 @@
         <meta name="description" content="Notes: Writing to ease learning">
       
       
-        <link rel="canonical" href="https://mohammedi-haroune.github.io/notes/high_output_management/introduction/">
+        <link rel="canonical" href="https://mohammedi-haroune.github.io/notes/configurations/ansible/">
       
       
         <meta name="author" content="MOHAMMEDI Haroune">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Introduction - Notes: Write to Ease Learning</title>
+        <title>Ansible - Notes: Write to Ease Learning</title>
       
     
     
@@ -108,7 +108,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#introduction" tabindex="1" class="md-skip">
+      <a href="#ansible" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -134,7 +134,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Introduction
+                Ansible
               
             </span>
           
@@ -303,10 +303,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Configurations
@@ -324,7 +326,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../configurations/SUMMARY/" title="Summary" class="md-nav__link">
+    <a href="../SUMMARY/" title="Summary" class="md-nav__link">
       Summary
     </a>
   </li>
@@ -334,11 +336,97 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../configurations/ansible/" title="Ansible" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Ansible
+      </label>
+    
+    <a href="./" title="Ansible" class="md-nav__link md-nav__link--active">
       Ansible
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-video" title="Getting started video" class="md-nav__link">
+    Getting started video
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" title="Architecture" class="md-nav__link">
+    Architecture
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modules" title="Modules" class="md-nav__link">
+    Modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" title="Variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventories" title="Inventories" class="md-nav__link">
+    Inventories
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playbooks" title="Playbooks" class="md-nav__link">
+    Playbooks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roles" title="Roles" class="md-nav__link">
+    Roles
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
+            Comments
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -348,7 +436,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../configurations/archiva/" title="Archiva" class="md-nav__link">
+    <a href="../archiva/" title="Archiva" class="md-nav__link">
       Archiva
     </a>
   </li>
@@ -360,7 +448,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../configurations/attach_gcp_disk/" title="Adding persistence disk to existing VMs" class="md-nav__link">
+    <a href="../attach_gcp_disk/" title="Adding persistence disk to existing VMs" class="md-nav__link">
       Adding persistence disk to existing VMs
     </a>
   </li>
@@ -372,7 +460,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../configurations/docker/" title="Docker" class="md-nav__link">
+    <a href="../docker/" title="Docker" class="md-nav__link">
       Docker
     </a>
   </li>
@@ -384,7 +472,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../configurations/domejudge/" title="DomJudge" class="md-nav__link">
+    <a href="../domejudge/" title="DomJudge" class="md-nav__link">
       DomJudge
     </a>
   </li>
@@ -396,7 +484,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../configurations/gcloud/" title="Cheat sheet" class="md-nav__link">
+    <a href="../gcloud/" title="Cheat sheet" class="md-nav__link">
       Cheat sheet
     </a>
   </li>
@@ -408,7 +496,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../configurations/kafka/" title="Kafka" class="md-nav__link">
+    <a href="../kafka/" title="Kafka" class="md-nav__link">
       Kafka
     </a>
   </li>
@@ -420,7 +508,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../configurations/log4j2/" title="Apache Log4j 2" class="md-nav__link">
+    <a href="../log4j2/" title="Apache Log4j 2" class="md-nav__link">
       Apache Log4j 2
     </a>
   </li>
@@ -432,7 +520,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../configurations/logback/" title="LogBack" class="md-nav__link">
+    <a href="../logback/" title="LogBack" class="md-nav__link">
       LogBack
     </a>
   </li>
@@ -444,7 +532,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../configurations/swarm/" title="Docker Swarm" class="md-nav__link">
+    <a href="../swarm/" title="Docker Swarm" class="md-nav__link">
       Docker Swarm
     </a>
   </li>
@@ -507,12 +595,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       High output management
@@ -530,7 +616,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../SUMMARY/" title="Summary" class="md-nav__link">
+    <a href="../../high_output_management/SUMMARY/" title="Summary" class="md-nav__link">
       Summary
     </a>
   </li>
@@ -542,7 +628,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../chapter1/" title="The Basics of Production: Delivering a Breakfast" class="md-nav__link">
+    <a href="../../high_output_management/chapter1/" title="The Basics of Production: Delivering a Breakfast" class="md-nav__link">
       The Basics of Production: Delivering a Breakfast
     </a>
   </li>
@@ -554,7 +640,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../chapter2/" title="Managing the Breakfast Factory" class="md-nav__link">
+    <a href="../../high_output_management/chapter2/" title="Managing the Breakfast Factory" class="md-nav__link">
       Managing the Breakfast Factory
     </a>
   </li>
@@ -566,7 +652,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../chapter3/" title="Managerial Leverage" class="md-nav__link">
+    <a href="../../high_output_management/chapter3/" title="Managerial Leverage" class="md-nav__link">
       Managerial Leverage
     </a>
   </li>
@@ -576,76 +662,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Introduction
-      </label>
-    
-    <a href="./" title="Introduction" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../high_output_management/introduction/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prepare-for-the-unexpected" title="Prepare for the unexpected" class="md-nav__link">
-    Prepare for the unexpected
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#team-work" title="Team Work" class="md-nav__link">
-    Team Work
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#one-on-one-metting" title="One-on-one metting" class="md-nav__link">
-    One-on-one metting
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#managing-your-own-career" title="Managing your own career" class="md-nav__link">
-    Managing your own career
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" title="Comments" class="md-nav__link md-nav__link--active">
-            Comments
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -939,29 +960,50 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prepare-for-the-unexpected" title="Prepare for the unexpected" class="md-nav__link">
-    Prepare for the unexpected
+  <a href="#getting-started-video" title="Getting started video" class="md-nav__link">
+    Getting started video
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#team-work" title="Team Work" class="md-nav__link">
-    Team Work
+  <a href="#architecture" title="Architecture" class="md-nav__link">
+    Architecture
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#one-on-one-metting" title="One-on-one metting" class="md-nav__link">
-    One-on-one metting
+  <a href="#modules" title="Modules" class="md-nav__link">
+    Modules
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#managing-your-own-career" title="Managing your own career" class="md-nav__link">
-    Managing your own career
+  <a href="#variables" title="Variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventories" title="Inventories" class="md-nav__link">
+    Inventories
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playbooks" title="Playbooks" class="md-nav__link">
+    Playbooks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roles" title="Roles" class="md-nav__link">
+    Roles
   </a>
   
 </li>
@@ -988,31 +1030,77 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mohammedi-haroune/notes/edit/master/docs/high_output_management/introduction.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/mohammedi-haroune/notes/edit/master/docs/configurations/ansible.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="introduction">Introduction</h1>
-<h2 id="prepare-for-the-unexpected">Prepare for the unexpected</h2>
-<blockquote>
-<p>Let chaos reign, then rein in chaos</p>
-</blockquote>
-<h2 id="team-work">Team Work</h2>
-<blockquote>
-<p>The output of a manager is the output of the organizational units under his or her supervision or influence</p>
-</blockquote>
-<h2 id="one-on-one-metting">One-on-one metting</h2>
-<p>one-on-one meeting, the supervisor teaches the subordinate his skills and know-how, and suggests ways to approach things. At the same time, the subordinate provides the supervisor with detailed information about what he is doing and what he is concerned about</p>
-<h2 id="managing-your-own-career">Managing your own career</h2>
-<blockquote>
-<p>The key task is to manage your career so that you do not become a casualty</p>
-<p>you are in a business with one employee: yourself</p>
-</blockquote>
-<p>You should ask yourself:</p>
-<ol>
-<li>Are you adding real value</li>
-<li>Are you plugged into what’s happening around you? </li>
-<li>Are you trying new ideas, new techniques, and new technologies</li>
-</ol>
+                <h1 id="ansible">Ansible</h1>
+<h2 id="getting-started-video">Getting started video</h2>
+<p><p><a href="https://www.ansible.com/resources/get-started?wvideo=qrqfj371b6#"><img src="https://embedwistia-a.akamaihd.net/deliveries/886db2fb0026d39e8fa8080a641dcfc0af40b167.jpg?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=848992e0" width="400" height="225" style="width: 400px; height: 225px;"></a></p><p><a href="https://www.ansible.com/resources/get-started?wvideo=qrqfj371b6#">Getting Started with Ansible | Ansible.com</a></p></p>
+<h2 id="architecture">Architecture</h2>
+<p><img alt="" src="../assets/ansible_architecture.png" /></p>
+<h2 id="modules">Modules</h2>
+<p>Modules control system resources, packages, files or nearly anything else. Example <em>apt</em></p>
+<div class="codehilite"><pre><span></span><span class="n">module</span><span class="o">:</span> <span class="n">directive1</span><span class="o">=</span><span class="n">value1</span> <span class="n">directive2</span><span class="o">=</span><span class="n">value2</span>
+</pre></div>
+
+
+<h2 id="variables">Variables</h2>
+<p>Variables make it easy to configure and alternate some configurations. Example: <em>a pakcage version, username .. etc</em>.
+They could be used in playbooks, files, inventories and command line.</p>
+<h2 id="inventories">Inventories</h2>
+<p>List of target machines which could be: static servers, ranges, dynamic servers on AWS, GCP ...etc </p>
+<div class="codehilite"><pre><span></span><span class="k">[webservers]</span>
+<span class="na">www1.example.com</span>
+<span class="na">www2.example.com</span>
+
+<span class="k">[dbservers]</span>
+<span class="na">db0.example.com</span>
+<span class="na">db1.example.com</span>
+</pre></div>
+
+
+<h2 id="playbooks">Playbooks</h2>
+<p>Plain text YAML files that describe the desired state of something.</p>
+<p>Playbooks are Ansible’s configuration, deployment, and orchestration language. They can describe a policy you want your remote systems to enforce, or a set of steps in a general IT process.</p>
+<p>If Ansible modules are the tools in your workshop, playbooks are your instruction manuals, and your inventory of hosts are your raw material.</p>
+<ul>
+<li>Playbooks contains <strong>plays</strong></li>
+<li>Plays contain <strong>tasks</strong></li>
+<li>Tasks contain <strong>modules</strong></li>
+<li>Tasks runs <strong>sequentially</strong> (mimicking you typing command lines)</li>
+<li><strong>Handlers</strong> are triggered by tasks, and run once at the end of plays.</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span> <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">webservers</span>
+  <span class="nt">remote_user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
+
+  <span class="nt">tasks</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ensure apache is at the latest version</span>
+    <span class="nt">yum</span><span class="p">:</span>
+      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
+      <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">write the apache config file</span>
+    <span class="nt">template</span><span class="p">:</span>
+      <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/srv/httpd.j2</span>
+      <span class="nt">dest</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/etc/httpd.conf</span>
+
+<span class="p p-Indicator">-</span> <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">databases</span>
+  <span class="nt">remote_user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
+
+  <span class="nt">tasks</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ensure postgresql is at the latest version</span>
+    <span class="nt">yum</span><span class="p">:</span>
+      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">postgresql</span>
+      <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ensure that postgresql is started</span>
+    <span class="nt">service</span><span class="p">:</span>
+      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">postgresql</span>
+      <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">started</span>
+</pre></div>
+
+
+<h2 id="roles">Roles</h2>
+<p>Roles are special kind of Playbooks that are fully self-contained with tasks, variables, configuration templates and other supporting files.</p>
                 
                   
                 
@@ -1025,9 +1113,9 @@
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = "https://mohammedi-haroune.github.io/notes/high_output_management/introduction/";
+      this.page.url = "https://mohammedi-haroune.github.io/notes/configurations/ansible/";
       this.page.identifier =
-        "high_output_management/introduction/";
+        "configurations/ansible/";
     };
     (function() {
       var d = document, s = d.createElement("script");
@@ -1049,7 +1137,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../chapter3/" title="Managerial Leverage" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../SUMMARY/" title="Summary" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1058,19 +1146,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Managerial Leverage
+                Summary
               </span>
             </div>
           </a>
         
         
-          <a href="../../programming/SUMMARY/" title="Summary" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../archiva/" title="Archiva" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Summary
+                Archiva
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
