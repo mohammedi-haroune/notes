@@ -39,14 +39,14 @@ class Post(db.Model):
 ```
 
 ### Database Migrations
-
-#### Create the migrations repo
+!!! note
+    `FLASK_APP` should be set for these commands to execute properly
+ 
+#### Create the migrations repository
 ```bash
 flask db init
 ```
-!!! note
-    `FLASK_APP` should be set for this command to execute properly
-    
+   
 #### Generate automatic migrations
 ```bash
 flask db migrate
@@ -56,6 +56,7 @@ We can provide a `-m` optional argument that adds a short descriptive text to th
 flask db migrate -m "added users table"
 ```
 
+#### Upgrade
 The `flask db migrate` command does not make any changes to the database, it just generates the migration script. To apply the changes to the database, the `flask db upgrade` command must be used.
 
 #### Downgrade
