@@ -102,7 +102,7 @@ java -Dlogback.configurationFile=/path/to/config.xml chapters.configuration.MyAp
 
 ## Configuration file syntax
 
-![](/assets/log_syntax.png)
+![](assets/log_syntax.png)
 
 #### Configuring loggers, or the`<logger>`element
 
@@ -144,7 +144,7 @@ the level of the root logger has no apparent effect because the loggers in `chap
 
 #### Configuring Appender
 
-![](/assets/appender.png)
+![](assets/appender.png)
 
 #### Example
 
@@ -234,7 +234,7 @@ By default, **appenders are cumulative**: a logger will log to the appenders att
 </configuration>
 ```
 
-## Default Mapping Classes![](/assets/dmc.png)
+## Default Mapping Classes![](assets/dmc.png)
 
 # Mapped Diagnostic Context
 
