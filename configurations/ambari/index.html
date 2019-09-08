@@ -13,7 +13,7 @@
         <meta name="description" content="Notes: Writing to ease learning">
       
       
-        <link rel="canonical" href="https://mohammedi-haroune.github.io/notes/configurations/ansible/">
+        <link rel="canonical" href="https://mohammedi-haroune.github.io/notes/configurations/ambari/">
       
       
         <meta name="author" content="MOHAMMEDI Haroune">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Ansible - Notes: Write to Ease Learning</title>
+        <title>Apache Ambari - Notes: Write to Ease Learning</title>
       
     
     
@@ -108,7 +108,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#ansible" tabindex="1" class="md-skip">
+      <a href="#apache-ambari" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -134,7 +134,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Ansible
+                Apache Ambari
               
             </span>
           
@@ -336,18 +336,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../ambari/" title="Apache Ambari" class="md-nav__link">
-      Apache Ambari
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -359,11 +347,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Ansible
+        Apache Ambari
       </label>
     
-    <a href="./" title="Ansible" class="md-nav__link md-nav__link--active">
-      Ansible
+    <a href="./" title="Apache Ambari" class="md-nav__link md-nav__link--active">
+      Apache Ambari
     </a>
     
       
@@ -377,50 +365,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-started-video" title="Getting started video" class="md-nav__link">
-    Getting started video
+  <a href="#install-agentserver" title="Install agent/server" class="md-nav__link">
+    Install agent/server
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#architecture" title="Architecture" class="md-nav__link">
-    Architecture
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modules" title="Modules" class="md-nav__link">
-    Modules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#variables" title="Variables" class="md-nav__link">
-    Variables
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inventories" title="Inventories" class="md-nav__link">
-    Inventories
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#playbooks" title="Playbooks" class="md-nav__link">
-    Playbooks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#roles" title="Roles" class="md-nav__link">
-    Roles
+  <a href="#vagrant-confiugration-multiple-machines-and-copy-ssh-key" title="Vagrant confiugration: multiple machines and copy ssh key" class="md-nav__link">
+    Vagrant confiugration: multiple machines and copy ssh key
   </a>
   
 </li>
@@ -439,6 +392,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ansible/" title="Ansible" class="md-nav__link">
+      Ansible
+    </a>
   </li>
 
         
@@ -1032,50 +997,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-started-video" title="Getting started video" class="md-nav__link">
-    Getting started video
+  <a href="#install-agentserver" title="Install agent/server" class="md-nav__link">
+    Install agent/server
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#architecture" title="Architecture" class="md-nav__link">
-    Architecture
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modules" title="Modules" class="md-nav__link">
-    Modules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#variables" title="Variables" class="md-nav__link">
-    Variables
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inventories" title="Inventories" class="md-nav__link">
-    Inventories
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#playbooks" title="Playbooks" class="md-nav__link">
-    Playbooks
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#roles" title="Roles" class="md-nav__link">
-    Roles
+  <a href="#vagrant-confiugration-multiple-machines-and-copy-ssh-key" title="Vagrant confiugration: multiple machines and copy ssh key" class="md-nav__link">
+    Vagrant confiugration: multiple machines and copy ssh key
   </a>
   
 </li>
@@ -1102,77 +1032,74 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/mohammedi-haroune/notes/edit/master/docs/configurations/ansible.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/mohammedi-haroune/notes/edit/master/docs/configurations/ambari.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="ansible">Ansible</h1>
-<h2 id="getting-started-video">Getting started video</h2>
-<p><p><a href="https://www.ansible.com/resources/get-started?wvideo=qrqfj371b6#"><img src="https://embedwistia-a.akamaihd.net/deliveries/886db2fb0026d39e8fa8080a641dcfc0af40b167.jpg?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=848992e0" width="400" height="225" style="width: 400px; height: 225px;"></a></p><p><a href="https://www.ansible.com/resources/get-started?wvideo=qrqfj371b6#">Getting Started with Ansible | Ansible.com</a></p></p>
-<h2 id="architecture">Architecture</h2>
-<p><img alt="" src="../assets/ansible_architecture.png" /></p>
-<h2 id="modules">Modules</h2>
-<p>Modules control system resources, packages, files or nearly anything else. Example <em>apt</em></p>
-<div class="codehilite"><pre><span></span><span class="n">module</span><span class="o">:</span> <span class="n">directive1</span><span class="o">=</span><span class="n">value1</span> <span class="n">directive2</span><span class="o">=</span><span class="n">value2</span>
-</pre></div>
-
-
-<h2 id="variables">Variables</h2>
-<p>Variables make it easy to configure and alternate some configurations. Example: <em>a pakcage version, username .. etc</em>.
-They could be used in playbooks, files, inventories and command line.</p>
-<h2 id="inventories">Inventories</h2>
-<p>List of target machines which could be: static servers, ranges, dynamic servers on AWS, GCP ...etc </p>
-<div class="codehilite"><pre><span></span><span class="k">[webservers]</span>
-<span class="na">www1.example.com</span>
-<span class="na">www2.example.com</span>
-
-<span class="k">[dbservers]</span>
-<span class="na">db0.example.com</span>
-<span class="na">db1.example.com</span>
-</pre></div>
-
-
-<h2 id="playbooks">Playbooks</h2>
-<p>Plain text YAML files that describe the desired state of something.</p>
-<p>Playbooks are Ansible’s configuration, deployment, and orchestration language. They can describe a policy you want your remote systems to enforce, or a set of steps in a general IT process.</p>
-<p>If Ansible modules are the tools in your workshop, playbooks are your instruction manuals, and your inventory of hosts are your raw material.</p>
+                <h1 id="apache-ambari">Apache Ambari</h1>
 <ul>
-<li>Playbooks contains <strong>plays</strong></li>
-<li>Plays contain <strong>tasks</strong></li>
-<li>Tasks contain <strong>modules</strong></li>
-<li>Tasks runs <strong>sequentially</strong> (mimicking you typing command lines)</li>
-<li><strong>Handlers</strong> are triggered by tasks, and run once at the end of plays.</li>
+<li>ambari-agent should be already installed on the hosts
+IF NOT installed then</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="nn">---</span>
-<span class="p p-Indicator">-</span> <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">webservers</span>
-  <span class="nt">remote_user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
+<div class="codehilite"><pre><span></span><span class="nv">Command</span> <span class="nv">start</span> <span class="nv">time</span> <span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">02</span> <span class="mi">03</span>:<span class="mi">02</span>:<span class="mi">36</span>
+<span class="nv">env</span>: ‘<span class="o">/</span><span class="nv">var</span><span class="o">/</span><span class="nv">lib</span><span class="o">/</span><span class="nv">ambari</span><span class="o">-</span><span class="nv">agent</span><span class="o">/</span><span class="nv">tmp</span><span class="o">/</span><span class="nv">os_check_type1567389754</span>.<span class="nv">py</span>’: <span class="nv">No</span> <span class="nv">such</span> <span class="nv">file</span> <span class="nv">or</span> <span class="nv">directory</span>
 
-  <span class="nt">tasks</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ensure apache is at the latest version</span>
-    <span class="nt">yum</span><span class="p">:</span>
-      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">httpd</span>
-      <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">write the apache config file</span>
-    <span class="nt">template</span><span class="p">:</span>
-      <span class="nt">src</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/srv/httpd.j2</span>
-      <span class="nt">dest</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/etc/httpd.conf</span>
+<span class="nv">Connection</span> <span class="nv">to</span> <span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">33</span>.<span class="mi">11</span> <span class="nv">closed</span>.
+<span class="nv">SSH</span> <span class="nv">command</span> <span class="nv">execution</span> <span class="nv">finished</span>
+<span class="nv">host</span><span class="o">=</span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">33</span>.<span class="mi">11</span>, <span class="nv">exitcode</span><span class="o">=</span><span class="mi">127</span>
+<span class="nv">Command</span> <span class="k">end</span> <span class="nv">time</span> <span class="mi">2019</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">02</span> <span class="mi">03</span>:<span class="mi">02</span>:<span class="mi">37</span>
 
-<span class="p p-Indicator">-</span> <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">databases</span>
-  <span class="nt">remote_user</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
+<span class="nv">ERROR</span>: <span class="nv">Bootstrap</span> <span class="nv">of</span> <span class="nv">host</span> <span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">33</span>.<span class="mi">11</span> <span class="nv">fails</span> <span class="nv">because</span> <span class="nv">previous</span> <span class="nv">action</span> <span class="nv">finished</span> <span class="nv">with</span> <span class="nv">non</span><span class="o">-</span><span class="nv">zero</span> <span class="k">exit</span> <span class="nv">code</span> <span class="ss">(</span><span class="mi">127</span><span class="ss">)</span>
+<span class="nv">ERROR</span> <span class="nv">MESSAGE</span>: <span class="nv">Connection</span> <span class="nv">to</span> <span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">33</span>.<span class="mi">11</span> <span class="nv">closed</span>.
 
-  <span class="nt">tasks</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ensure postgresql is at the latest version</span>
-    <span class="nt">yum</span><span class="p">:</span>
-      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">postgresql</span>
-      <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">latest</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ensure that postgresql is started</span>
-    <span class="nt">service</span><span class="p">:</span>
-      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">postgresql</span>
-      <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">started</span>
+<span class="nv">STDOUT</span>: <span class="nv">env</span>: ‘<span class="o">/</span><span class="nv">var</span><span class="o">/</span><span class="nv">lib</span><span class="o">/</span><span class="nv">ambari</span><span class="o">-</span><span class="nv">agent</span><span class="o">/</span><span class="nv">tmp</span><span class="o">/</span><span class="nv">os_check_type1567389754</span>.<span class="nv">py</span>’: <span class="nv">No</span> <span class="nv">such</span> <span class="nv">file</span> <span class="nv">or</span> <span class="nv">directory</span>
+
+<span class="nv">Connection</span> <span class="nv">to</span> <span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">33</span>.<span class="mi">11</span> <span class="nv">closed</span>.
 </pre></div>
 
 
-<h2 id="roles">Roles</h2>
-<p>Roles are special kind of Playbooks that are fully self-contained with tasks, variables, configuration templates and other supporting files.</p>
+<ul>
+<li>SSh key should not have passphrase
+if not then:</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="n">Permission</span> <span class="n">denied</span> <span class="p">(</span><span class="k">public</span> <span class="k">key</span><span class="p">)</span>
+</pre></div>
+
+
+<h2 id="install-agentserver">Install agent/server</h2>
+<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">wget</span> <span class="o">-</span><span class="n">O</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="p">.</span><span class="n">list</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">ambari</span><span class="p">.</span><span class="n">list</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="k">public</span><span class="o">-</span><span class="n">repo</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="n">hortonworks</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">ambari</span><span class="o">/</span><span class="n">ubuntu16</span><span class="o">/</span><span class="mi">2</span><span class="p">.</span><span class="n">x</span><span class="o">/</span><span class="n">updates</span><span class="o">/</span><span class="mi">2</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">3</span><span class="p">.</span><span class="mi">0</span><span class="o">/</span><span class="n">ambari</span><span class="p">.</span><span class="n">list</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">key</span> <span class="n">adv</span> <span class="c1">--recv-keys --keyserver keyserver.ubuntu.com B9733A7A07513CAD\n</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="k">update</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">ambari</span><span class="o">-</span><span class="n">agent</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">ambari</span><span class="o">-</span><span class="n">server</span>
+</pre></div>
+
+
+<h2 id="vagrant-confiugration-multiple-machines-and-copy-ssh-key">Vagrant confiugration: multiple machines and copy ssh key</h2>
+<p>This will allow access to the machine as the root user</p>
+<div class="codehilite"><pre><span></span>  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provider</span> <span class="s2">&quot;virtualbox&quot;</span> <span class="k">do</span> <span class="o">|</span><span class="n">vb</span><span class="o">|</span>
+    <span class="c1"># Display the VirtualBox GUI when booting the machine</span>
+    <span class="n">vb</span><span class="o">.</span><span class="n">gui</span> <span class="o">=</span> <span class="kp">false</span>
+    <span class="c1"># Customize the amount of memory on the VM:</span>
+    <span class="n">vb</span><span class="o">.</span><span class="n">memory</span> <span class="o">=</span> <span class="s2">&quot;1024&quot;</span>
+  <span class="k">end</span>
+
+  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">define</span> <span class="s2">&quot;namenode&quot;</span> <span class="k">do</span> <span class="o">|</span><span class="n">namenode</span><span class="o">|</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="s2">&quot;private_network&quot;</span><span class="p">,</span> <span class="ss">ip</span><span class="p">:</span> <span class="s2">&quot;192.168.33.10&quot;</span>
+  <span class="k">end</span>
+
+  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">define</span> <span class="s2">&quot;datanode1&quot;</span> <span class="k">do</span> <span class="o">|</span><span class="n">datanode1</span><span class="o">|</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="s2">&quot;private_network&quot;</span><span class="p">,</span> <span class="ss">ip</span><span class="p">:</span> <span class="s2">&quot;192.168.33.11&quot;</span>
+  <span class="k">end</span>
+
+  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">define</span> <span class="s2">&quot;datanode2&quot;</span> <span class="k">do</span> <span class="o">|</span><span class="n">datanode2</span><span class="o">|</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="s2">&quot;private_network&quot;</span><span class="p">,</span> <span class="ss">ip</span><span class="p">:</span> <span class="s2">&quot;192.168.33.12&quot;</span>
+  <span class="k">end</span>
+
+  <span class="n">ssh_pub_key</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">readlines</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="no">Dir</span><span class="o">.</span><span class="n">home</span><span class="si">}</span><span class="s2">/.ssh/id_rsa_ambari.pub&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">strip</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provision</span> <span class="s1">&#39;shell&#39;</span><span class="p">,</span> <span class="ss">inline</span><span class="p">:</span> <span class="s1">&#39;mkdir -p /root/.ssh&#39;</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provision</span> <span class="s1">&#39;shell&#39;</span><span class="p">,</span> <span class="ss">inline</span><span class="p">:</span> <span class="s2">&quot;echo </span><span class="si">#{</span><span class="n">ssh_pub_key</span><span class="si">}</span><span class="s2"> &gt;&gt; /root/.ssh/authorized_keys&quot;</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provision</span> <span class="s1">&#39;shell&#39;</span><span class="p">,</span> <span class="ss">inline</span><span class="p">:</span> <span class="s2">&quot;echo </span><span class="si">#{</span><span class="n">ssh_pub_key</span><span class="si">}</span><span class="s2"> &gt;&gt; /home/vagrant/.ssh/authorized_keys&quot;</span><span class="p">,</span> <span class="ss">privileged</span><span class="p">:</span> <span class="kp">false</span>
+</pre></div>
                 
                   
                 
@@ -1185,9 +1112,9 @@ They could be used in playbooks, files, inventories and command line.</p>
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = "https://mohammedi-haroune.github.io/notes/configurations/ansible/";
+      this.page.url = "https://mohammedi-haroune.github.io/notes/configurations/ambari/";
       this.page.identifier =
-        "configurations/ansible/";
+        "configurations/ambari/";
     };
     (function() {
       var d = document, s = d.createElement("script");
@@ -1209,7 +1136,7 @@ They could be used in playbooks, files, inventories and command line.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ambari/" title="Apache Ambari" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../SUMMARY/" title="Summary" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1218,19 +1145,19 @@ They could be used in playbooks, files, inventories and command line.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Apache Ambari
+                Summary
               </span>
             </div>
           </a>
         
         
-          <a href="../archiva/" title="Archiva" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ansible/" title="Ansible" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Archiva
+                Ansible
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
