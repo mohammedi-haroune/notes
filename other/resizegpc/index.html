@@ -662,6 +662,30 @@
 
 
   <li class="md-nav__item">
+    <a href="../kubernets/" title="Kubernets" class="md-nav__link">
+      Kubernets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lessons/" title="02 Mars 2020" class="md-nav__link">
+      02 Mars 2020
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../marketing/" title="Marketing" class="md-nav__link">
       Marketing
     </a>
@@ -713,6 +737,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../time/" title="Time management" class="md-nav__link">
+      Time management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../workshop/" title="Workshop" class="md-nav__link">
+      Workshop
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -757,6 +805,18 @@
   <li class="md-nav__item">
     <a href="../../programming/chapter1/" title="Unit Tests :D" class="md-nav__link">
       Unit Tests :D
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../programming/design_patterns/" title="Design Patterns" class="md-nav__link">
+      Design Patterns
     </a>
   </li>
 
@@ -1037,14 +1097,13 @@
                 
                 
                 <h1 id="resize-gcp-disk">Resize GCP disk</h1>
-<p>This will be a TL;DR of (This documentation)[https://cloud.google.com/compute/docs/disks/add-persistent-disk?hl=en_US&amp;_ga=2.20537466.-376733059.1572913717#resize_pd]</p>
+<p>This will be a TL;DR of <a href="https://cloud.google.com/compute/docs/disks/add-persistent-disk?hl=en_US&amp;_ga=2.20537466.-376733059.1572913717#resize_pd">this documentation</a></p>
 <ol>
 <li>Resize the disk from the "Disks" interface or using <code>gcloud</code></li>
 <li>Tell the system</li>
 <li>Get the <code>[DEVICE_ID]</code> and <code>[DEVICE_PARTITION]</code> of the disk using:
    <code>sudo df -h</code> and <code>sudo lsblk</code>. Example: <code>/dev/sda1</code> means: <code>[DEVICE_ID]=1</code> and <code>[DEVICE_PARTITION]=/dev/sda</code></li>
 <li><code>sudo apt -y install cloud-guest-utils</code></li>
-<li><code>sudo yum -y install cloud-utils-growpart</code></li>
 <li><code>sudo growpart /dev/[DEVICE_ID] [PARTITION_NUMBER]</code></li>
 <li><code>sudo resize2fs /dev/[DEVICE_ID][PARTITION_NUMBER]</code></li>
 </ol>
