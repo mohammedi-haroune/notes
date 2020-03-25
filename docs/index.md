@@ -8,3 +8,6 @@ I'm just writing notes about what I'm learning, about ideas that pitched me but 
 
 ## Contribution
 If you find any mistake, typos or just wanting to improve those notes, feel free to open issues, pull requests are very welcomed. https://github.com/mohammedi-haroune/notes/
+
+<div id="commento"></div>
+<script src="https://cdn.commento.io/js/commento.js"></script>
