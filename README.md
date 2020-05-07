@@ -5,13 +5,22 @@ I just decided to start writing things down to be able to speed learning by not 
 
 
 # Instaling
-1. Install [mkdocs](https://www.mkdocs.org/)
-```
-pip install mkdocs
-```
-2. Clone the repo and serve the project
 ```
 git clone https://github.com/mohammedi-haroune/notes.git
 cd notes
+pip install -r requirements.txt
+```
+# Serve
+```
 mkdocs serve
+```
+
+# Deploy to Github pages
+```
+mkdocs gh-deploy
+```
+
+# Build website
+```
+mkdocs build
 ```
