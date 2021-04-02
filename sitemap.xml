@@ -1,253 +1,283 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://mohammedi-haroune.github.io/notes/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/big_ideas/SUMMARY/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/big_ideas/chapter1/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/configurations/SUMMARY/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/configurations/alembic/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/configurations/ambari/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/configurations/ansible/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/configurations/archiva/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/configurations/attach_gcp_disk/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/configurations/docker/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/configurations/domejudge/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/configurations/gcloud/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/configurations/go/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/configurations/kafka/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/configurations/log4j2/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/configurations/logback/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/configurations/prometheus/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/configurations/security/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/configurations/swarm/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/elasticsearch/SUMMARY/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/elasticsearch/chapter1/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/high_output_management/SUMMARY/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/high_output_management/chapter1/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/high_output_management/chapter2/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/high_output_management/chapter3/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/high_output_management/introduction/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/other/beat-the-python/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/other/books/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/other/emacs/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/other/entrepreneurship/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/other/facebook_ads/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/other/fix_stuck_apt/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/other/grub/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/other/habit/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/other/install_python_from_source/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/other/jupyterlab/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/other/kubernets/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/other/lessons/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/other/linux/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/other/marketing/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/other/minio/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/other/mlflow/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/other/productivity/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/other/python_workshop/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/other/resizegpc/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/other/seldon/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/other/self-esteem/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/other/sleep/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/other/therapy/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/other/time/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/other/workshop/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/programming/SUMMARY/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/programming/chapter1/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/programming/clean_code/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/programming/design_patterns/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/programming/spacemacs/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
+     <loc>https://mohammedi-haroune.github.io/notes/programming/ttd/</loc>
+     <lastmod>2021-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/python/conda/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/python/effective-python/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/python/firebase/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/python/flask/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/python/pip/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/react/SUMMARY/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/react/main_concepts/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/scala/SUMMARY/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/scala/ammonite/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/scala/chapter1/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/scala/sbt-native-packager/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/scala/sbt/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://mohammedi-haroune.github.io/notes/scala/standars/</loc>
-     <lastmod>2020-03-25</lastmod>
+     <lastmod>2021-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
