@@ -35,7 +35,7 @@
 Reminders to important things to check before closing the issue
 
 -->
-- [ ] Document what to do if this incident happen again in [Gotchas]() if a prevention strategy is not automated
+- [ ] Document what to do if this incident happen again in [Gotchas](https://gitlab.com/big-mama-tech/pravdaml/pravda/-/wikis/Gotchas) if a prevention strategy is not automated
 
 
 

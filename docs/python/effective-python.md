@@ -1,7 +1,7 @@
 # Forward
 The book is really effective, that is you read a small chunk of the book to get a really interesting ideas to write a better python code (Example: item 9 Consider Generator Expressions for Large Comprehensions), Pythonic ways to code most common patterns (Example: item 10 Prefer `enumerate` Over `range`and item 11 Use `zip` to Process Iterators in Parallel) and also advice for good practices (Example: item 1: Follow the PEP 8 Style Guide).
 
-What I really liked in the book is: the author putting a lot attention on writing readable, reusable and maintainable code, thinking a lot about newbies who will read your code and also about adding functionalities to to your code while preserving backward compatibility.
+What I really liked in the book is the author putting a lot of attention on writing readable, reusable and maintainable code, thinking a lot about newbies who will read your code and also about adding functionalities to to your code while preserving backward compatibility.
 
 # Content
 ## Chapter 1: Pythonic Thinking
