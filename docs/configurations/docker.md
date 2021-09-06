@@ -8,7 +8,13 @@ sudo sh get-docker.sh
 
 To run docker commands without sudo
 ```bash
-sudo usermod -aG docker your-user
+sudo usermod -aG docker $LOGNAME
+```
+
+or
+
+```bash
+newgrp docker
 ```
 
 !!! note
@@ -38,4 +44,24 @@ gcloud init
 Portainer is a dashboard for docker
 ```bash
 docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+```
+
+## Start containers automatically
+Use: `--restart-policy` :
+
+- `no`:	Do not automatically restart the container. (the default)
+- `on-failure`:	Restart the container if it exits due to an error, which manifests as a non-zero exit code.
+- `always`:	Always restart the container if it stops. If it is manually stopped, it is restarted only when Docker daemon restarts or the container itself is manually restarted. (See the second bullet listed in restart policy details)
+- `unless-stopped`: Similar to always, except that when the container is stopped (manually or otherwise), it is not restarted even after Docker daemon restarts.
+
+## Connect containers to both default and bridge network
+I couldn't find any proper way to do that but there a workarround I found [here](https://github.com/docker/compose/issues/3012#issuecomment-308403917)
+
+```yaml
+  connect-bridge:
+    image: docker:stable
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    command: /bin/sh -c "docker ps -f label=networks=bridge -q | xargs -I'{}' docker network connect bridge {}"
+
 ```
