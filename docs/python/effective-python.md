@@ -54,7 +54,7 @@ squares = map(lambda x: x ** 2, a)
 For the sake of readability
 ```python
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-# Prefer this 
+# Prefer this
 filtered = []
 for row in matrix:
     if sum(row) >= 10
@@ -62,7 +62,7 @@ for row in matrix:
             if x % 3 == 0:
                 filtered.append(x)
 # Than this
-filtered = [x for row in matrix if sum(row) >= 10 
+filtered = [x for row in matrix if sum(row) >= 10
               for x in row if x % 3 == 0]
 ```
 
@@ -131,8 +131,7 @@ The `else` block helps you minimize the amount of code in try blocks and visuall
 ### Item 29: Use Plain Attributes Instead of Get and Set Methods
 ### Item 30: Consider @property Instead of Refactoring Attributes
 ### Item 31: Use Descriptors for Reusable @property Methods
-### Item 32: Use __getattr__, __getattribute__, and __setattr__ for Lazy
-Attributes
+### Item 32: Use __getattr__, __getattribute__, and __setattr__ for Lazy Attributes
 ### Item 33: Validate Subclasses with Metaclasses
 ### Item 34: Register Class Existence with Metaclasses
 ### Item 35: Annotate Class Attributes with Metaclasses

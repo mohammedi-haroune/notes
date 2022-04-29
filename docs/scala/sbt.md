@@ -1,4 +1,4 @@
-# Sbt 
+# Sbt
 
 ## Install
 ```bash
@@ -21,4 +21,3 @@ and then run:
 `sbt docker:publishLocal` to push the docker image locally
 
 `sbt universal:packageBin` to create `target/universal/yourapp.zip` distribution file
-

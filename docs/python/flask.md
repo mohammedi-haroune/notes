@@ -41,12 +41,12 @@ class Post(db.Model):
 ### Database Migrations
 !!! note
     `FLASK_APP` should be set for these commands to execute properly
- 
+
 #### Create the migrations repository
 ```bash
 flask db init
 ```
-   
+
 #### Generate automatic migrations
 ```bash
 flask db migrate
@@ -143,4 +143,22 @@ class Production(Config):
 
 class Testing(Config):
     SOME_CONFIG = 'testing-config'
+```
+
+## Jija
+### Basic
+```python
+template_dir = os.path.dirname(template_path)
+template_name = os.path.basename(template_path)
+env = Environment(loader=FileSystemLoader(template_dir), **env_kwargs)
+template = env.get_template(template_name)
+
+```
+### Raise exception
+```python
+def raise_from_jinja(*args, **kwargs):
+    raise Exception(*args, **kwargs)
+
+# And add it to the globals of the template
+template.globals.update({'raise': raise_from_jinja})
 ```

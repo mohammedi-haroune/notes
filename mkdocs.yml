@@ -3,23 +3,23 @@ site_url: 'https://mohammedi-haroune.github.io/notes/'
 repo_url: 'https://github.com/mohammedi-haroune/notes'
 repo_name: 'Github'
 site_description: 'Notes: Writing to ease learning'
-site_author: 'MOHAMMEDI Haroune'
+site_author: 'Haroune Mohammedi'
 google_analytics: ['UA-137032230-1', 'auto']
 
 theme:
   name: 'material'
   font:
-    text: 'Montserrat'
+    # text: 'Montserrat'
     code: 'Source Code Pro'
 
 extra:
-  social:
-    - type: 'github'
-      link: 'https://github.com/mohammedi-haroune'
-    - type: 'stack-overflow'
-      link: 'https://stackoverflow.com/users/7573221/haroun-mohammedi'
-    - type: 'linkedin'
-      link: 'https://linkedin.com/in/mohammedi-haroune-3b3836170'
+  # social:
+  #   - type: 'github'
+  #     link: 'https://github.com/mohammedi-haroune'
+  #   - type: 'stack-overflow'
+  #     link: 'https://stackoverflow.com/users/7573221/haroun-mohammedi'
+  #   - type: 'linkedin'
+  #     link: 'https://linkedin.com/in/mohammedi-haroune-3b3836170'
   search:
     language: ['en']
   disqus: 'notes-6'
