@@ -1,0 +1,102 @@
+{
+  "main": {
+    "id": "240ca001c22dada2",
+    "type": "split",
+    "children": [
+      {
+        "id": "d7d555ececea3f78",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "aws/RDS and others.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ea75bf917d0e0bfe",
+    "type": "split",
+    "children": [
+      {
+        "id": "e5a901529bde59c7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "815ef43fdd044470",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "a7dd80d8acadfd7a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "redis",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 326
+  },
+  "right": {
+    "id": "a703ec3eb7f28ae8",
+    "type": "split",
+    "children": [
+      {
+        "id": "8d1abc38ae7cb778",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "09bc32814477d999",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "aws/RDS and others.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "d7d555ececea3f78",
+  "lastOpenFiles": [
+    "aws/RDS and others.md",
+    "aws/EFS - EBS.md",
+    "aws/DNS - Route53.md",
+    "aws/Cognito.md",
+    "aws/CloudX - Formation - Watch - Logs.md",
+    "aws/CloudFront.md",
+    "aws/BeanStack.md",
+    "aws/API Gateway.md",
+    "aws/High Availability - Scaling.md",
+    "aws/IAM.md"
+  ]
+}
