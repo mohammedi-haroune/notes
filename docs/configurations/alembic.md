@@ -8,5 +8,3 @@ alembic init alembic
   - Change it in `alembic.ini`
   Or
   - Change the way it's read in `alembic/env.py` if you want to read it from environment variables or any other custom business logic you need.
-  
-- 

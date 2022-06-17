@@ -4,7 +4,7 @@ You should:
 
 1. Have an existing VMS
 2. An external disk created and attached to that VMs
-
+		
 The commands bellow will format the disk, mount it and make it mounted automatically on boot.
 
 

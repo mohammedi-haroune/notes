@@ -1,0 +1,4 @@
+## Why you among all other women on earth?
+One of the most important reasons is that I believe you've got something to bring to the table, I want to have a strong relationship which builds a solid family and I wanted someone to help me with that, I wanted someone who can add value, someone who can teach me things I don't know, with whom I can discuss difficult topics and have a fruitful conversation, who can help me see things in a different perspectives, who pushes me to be better, ... I can go forever but let's just stop here.
+
+Why do I believe that ? For starter, you read a lot of books which will definitely raises you awareness, give you perspectives, open doors in you head, make you more intelligent and more cultured. Second, you've been through a lot of chalenges: Bab ezzouar, Living away from parents ... which I'm sure have helped shaping you in many dimensions and learned a lot during that journey

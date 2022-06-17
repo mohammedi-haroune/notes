@@ -1,0 +1,2 @@
+## Have well framed short term goals
+Every time I spend a long time on a task, usually by working on things that aren't really important for that specific task that resuls in me proctastinating a lot which in itself cause the taks to take more time and I almost all the time get trapped in a long long cycle of negativeness.
