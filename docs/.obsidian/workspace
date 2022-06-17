@@ -1,0 +1,121 @@
+{
+  "main": {
+    "id": "c0a8e3edc76bb672",
+    "type": "split",
+    "children": [
+      {
+        "id": "fe05066d909600e0",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "python/descriptors.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5acb985ce5e46736",
+    "type": "split",
+    "children": [
+      {
+        "id": "15072cd248ebd433",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0bf5656b6c1809ba",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "f44f7bef19f7635c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "scala",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0ac5dbdb9f8156fb",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "c8f1aa0424b1aac8",
+    "type": "split",
+    "children": [
+      {
+        "id": "2625ebadf9e3cd05",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c9b895ed253db33e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "python/descriptors.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1210e694b2728ad3",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "python/descriptors.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "fe05066d909600e0",
+  "lastOpenFiles": [
+    "python/descriptors.md",
+    "python/conda.md",
+    "elasticsearch/chapter1.md",
+    "other/self-esteem.md",
+    "other/sleep.md",
+    "other/habit.md",
+    "other/grub.md",
+    "other/fix_stuck_apt.md",
+    "other/facebook_ads.md",
+    "other/commands.md"
+  ]
+}

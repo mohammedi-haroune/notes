@@ -17,3 +17,7 @@ gcloud compute instances set-machine-type swarm-manager --machine-type g1-small
 ```
 gcloud compute instances stop swarm-manager
 ```
+## Completion makes life easier, just use it
+```
+eval $(gcloud completion zsh)
+```
