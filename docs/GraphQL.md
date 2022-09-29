@@ -1,4 +1,4 @@
-# Overview
+# GraphQL
 >Source: https://graphql.org/
 
 - A query language and a runtime to fulfill those queries
