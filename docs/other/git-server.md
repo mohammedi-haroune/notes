@@ -49,6 +49,16 @@ sudo chsh git -s $(which git-shell) # Set the shell to git-shell for git user
 ```bash
 no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty ssh-rsa [KEY]
 ```
+- Disable password authentication for `git` user
+	- Create a file `/etc/ssh/sshd_config.d/disable_password_for_git_user.conf`
+```bash
+Match User git
+    PasswordAuthentication no
+```
+```
+```bash
+sudo systemctl restart ssh
+```
 
 - [Top 20 OpenSSH Server Best Security Practices](https://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html)
 
