@@ -1,4 +1,5 @@
 site
 venv
+docs/.stversions/
 docs/.obsidian
 docs/me
