@@ -145,15 +145,16 @@ class Testing(Config):
     SOME_CONFIG = 'testing-config'
 ```
 
-## Jija
+## Jinja
+
 ### Basic
 ```python
 template_dir = os.path.dirname(template_path)
 template_name = os.path.basename(template_path)
 env = Environment(loader=FileSystemLoader(template_dir), **env_kwargs)
 template = env.get_template(template_name)
-
 ```
+
 ### Raise exception
 ```python
 def raise_from_jinja(*args, **kwargs):

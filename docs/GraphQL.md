@@ -66,6 +66,13 @@ type Species {
 - Server-side Batching & Caching using a tool like Facebook's [DataLoader](https://github.com/facebook/dataloader).
 - Pagination, read more about this in the article on [Pagination](https://graphql.org/learn/pagination/).
 
+## Caching
+>Source: https://graphql.org/learn/caching/
+
+Since GraphQL is exposed at the same HTTP URL, clients can't use HTTP caching to easily avoid refetching resources, and for identifying when two resources are the same.
+
+A standard solution for this is to identify resources with a Globally Unique ID across all types but this could be problematic if we're migrating existing APIs to GraphQL, this could be solved by exposing the previous APIs ID in a separate field, if not the client can also derive the globally unique identifier. Oftentimes, this would be as simple as combining the type of the object (queried with `__typename`) with some type-unique identifier.
+
 ## Thinking in graphs
 >Source: https://graphql.org/learn/thinking-in-graphs/
 
@@ -523,3 +530,302 @@ Named fragments can also be used in the same way, since a named fragment always 
 In the above query, `search` returns a union type that can be one of three options. It would be impossible to tell apart the different types from the client without the `__typename` field.
 
 GraphQL services provide a few meta fields, the rest of which are used to expose the [Introspection](https://graphql.org/learn/introspection/) system.
+
+
+# Execution
+>Source: https://graphql.org/learn/execution/
+
+You can think of each field in a GraphQL query as a function or method of the previous type which returns the next type. In fact, this is exactly how GraphQL works. Each field on each type is backed by a function called the _resolver_ which is provided by the GraphQL server developer. When a field is executed, the corresponding _resolver_ is called to produce the next value. If a field produces a scalar value like a string or number, then the execution completes.
+
+Let's take this example
+```graphql
+type Query {
+  human(id: ID!): Human
+}
+
+type Human {
+  name: String
+  appearsIn: [Episode]
+  starships: [Starship]
+}
+
+enum Episode {
+  NEWHOPE
+  EMPIRE
+  JEDI
+}
+
+type Starship {
+  name: String
+}
+```
+
+```graphql
+{
+  human(id: 1002) {
+    name
+    appearsIn
+    starships {
+      name
+    }
+  }
+}
+```
+
+```json
+{
+  "data": {
+    "human": {
+      "name": "Han Solo",
+      "appearsIn": [
+        "NEWHOPE",
+        "EMPIRE",
+        "JEDI"
+      ],
+      "starships": [
+        {
+          "name": "Millenium Falcon"
+        },
+        {
+          "name": "Imperial shuttle"
+        }
+      ]
+    }
+  }
+}
+```
+
+## Root fields & resolvers
+At the top level of every GraphQL server is a type that represents all of the possible entry points into the GraphQL API, it's often called the _Root_ type or the _Query_ type.
+
+A resolver function accesses the database and returns the the field value, it receives four arguments:
+-   `obj` The previous object, which for a field on the root Query type is often not used.
+-   `args` The arguments provided to the field in the GraphQL query.
+-   `context` A value which is provided to every resolver and holds important contextual information like the currently logged in user, or access to a database.
+-   `info` A value which holds field-specific information relevant to the current query as well as the schema details, also refer to [type GraphQLResolveInfo for more details](https://graphql.org/graphql-js/type/#graphqlobjecttype).
+
+Resolvers can be asynchrnous, GraphQL will wait for Promises, Futures, and Tasks to complete before continuing and will do so with optimal concurrency.
+
+```javascript
+Query: {
+  human(obj, args, context, info) {
+    return context.db.loadHumanByID(args.id).then(
+      userData => new Human(userData)
+    )
+  }
+}
+```
+
+## Scalar coercion
+```javascript
+Human: {
+  appearsIn(obj) {
+    return obj.appearsIn // returns [ 4, 5, 6 ]
+  }
+}
+```
+
+Notice that our type system claims `appearsIn` will return Enum values with known values, the type system knows what to expect and will convert the values returned by a resolver function into something that upholds the API contract. In this case, there may be an Enum defined on our server which uses numbers like `4`, `5`, and `6` internally, but represents them as Enum values in the GraphQL type system.
+
+## Introspection
+It's often useful to ask a GraphQL schema for information about what queries it supports. GraphQL allows us to do so using introspection root fields like `__schema`, `__type` and `__typename`
+
+**Examples:**
+1. List all available types
+```graphql
+{
+  __schema {
+    types {
+      name
+    }
+  }
+}
+```
+
+```json
+{
+  "data": {
+    "__schema": {
+      "types": [
+        {
+          "name": "Query"
+        },
+        {
+          "name": "String"
+        },
+        {
+          "name": "ID"
+        },
+        {
+          "name": "Mutation"
+        },
+        {
+          "name": "Episode"
+        },
+        {
+          "name": "Character"
+        },
+        {
+          "name": "Int"
+        },
+        {
+          "name": "LengthUnit"
+        },
+        {
+          "name": "Human"
+        },
+        {
+          "name": "Float"
+        },
+        {
+          "name": "Droid"
+        },
+        {
+          "name": "FriendsConnection"
+        },
+        {
+          "name": "FriendsEdge"
+        },
+        {
+          "name": "PageInfo"
+        },
+        {
+          "name": "Boolean"
+        },
+        {
+          "name": "Review"
+        },
+        {
+          "name": "ReviewInput"
+        },
+        {
+          "name": "Starship"
+        },
+        {
+          "name": "SearchResult"
+        },
+        {
+          "name": "__Schema"
+        },
+        {
+          "name": "__Type"
+        },
+        {
+          "name": "__TypeKind"
+        },
+        {
+          "name": "__Field"
+        },
+        {
+          "name": "__InputValue"
+        },
+        {
+          "name": "__EnumValue"
+        },
+        {
+          "name": "__Directive"
+        },
+        {
+          "name": "__DirectiveLocation"
+        }
+      ]
+    }
+  }
+}
+```
+
+2. Check the fields of a given type
+```graphql
+{
+  __type(name: "Droid") {
+    name
+    fields {
+      name
+      type {
+        name
+        kind
+        ofType {
+          name
+          kind
+        }
+      }
+    }
+  }
+}
+```
+
+```json
+{
+  "data": {
+    "__type": {
+      "name": "Droid",
+      "fields": [
+        {
+          "name": "id",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "ID",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "name",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "String",
+              "kind": "SCALAR"
+            }
+          }
+        },
+        {
+          "name": "friends",
+          "type": {
+            "name": null,
+            "kind": "LIST",
+            "ofType": {
+              "name": "Character",
+              "kind": "INTERFACE"
+            }
+          }
+        },
+        {
+          "name": "friendsConnection",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": "FriendsConnection",
+              "kind": "OBJECT"
+            }
+          }
+        },
+        {
+          "name": "appearsIn",
+          "type": {
+            "name": null,
+            "kind": "NON_NULL",
+            "ofType": {
+              "name": null,
+              "kind": "LIST"
+            }
+          }
+        },
+        {
+          "name": "primaryFunction",
+          "type": {
+            "name": "String",
+            "kind": "SCALAR",
+            "ofType": null
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
