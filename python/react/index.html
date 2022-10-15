@@ -1,0 +1,2614 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Notes: Writing to ease learning">
+      
+      
+        <meta name="author" content="Haroune Mohammedi">
+      
+      
+        <link rel="canonical" href="https://mohammedi-haroune.github.io/notes/python/react/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.6">
+    
+    
+      
+        <title>Introducing JSX - Notes: Write to Ease Learning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introducing-jsx" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Notes: Write to Ease Learning" class="md-header__button md-logo" aria-label="Notes: Write to Ease Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Notes: Write to Ease Learning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introducing JSX
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mohammedi-haroune/notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Notes: Write to Ease Learning" class="md-nav__button md-logo" aria-label="Notes: Write to Ease Learning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Notes: Write to Ease Learning
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mohammedi-haroune/notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome to My Notes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          PHd
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PHd" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          PHd
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PHd/share_resources/" class="md-nav__link">
+        Share resources
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          TrackWebPage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="TrackWebPage" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          TrackWebPage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TrackWebPage/Lawyers/" class="md-nav__link">
+        Lawyers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TrackWebPage/Messaging/" class="md-nav__link">
+        Messaging
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Aws
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Aws" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Aws
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/APIGateway/" class="md-nav__link">
+        API Gateway
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/BeanStack/" class="md-nav__link">
+        BeanStack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/CloudFront/" class="md-nav__link">
+        CloudFront
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/CloudX-Formation-Watch-Logs/" class="md-nav__link">
+        CloudFormation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/Cognito/" class="md-nav__link">
+        Cognito
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/DNS-Route53/" class="md-nav__link">
+        DNS Route53
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/EC2-ELB/" class="md-nav__link">
+        EC2 ELB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/EFS-EBS/" class="md-nav__link">
+        EFS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/High%20Availability%20-%20Scaling/" class="md-nav__link">
+        High Availability
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/IAM/" class="md-nav__link">
+        IAM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/Kennisis/" class="md-nav__link">
+        Kennisis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/Lambda/" class="md-nav__link">
+        Lambda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/RDSandOthers/" class="md-nav__link">
+        RDS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/S3/" class="md-nav__link">
+        S3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/SQS-SNS-ElastiCache/" class="md-nav__link">
+        SQS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/Snowball/" class="md-nav__link">
+        Snowball
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/Summary/" class="md-nav__link">
+        Summary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/VPC/" class="md-nav__link">
+        VPC
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Configurations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Configurations" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Configurations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/Mac/" class="md-nav__link">
+        Mac
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/SUMMARY/" class="md-nav__link">
+        Summary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/Spark/" class="md-nav__link">
+        Basics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/alembic/" class="md-nav__link">
+        Alembic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/ambari/" class="md-nav__link">
+        Apache Ambari
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/ansible/" class="md-nav__link">
+        Ansible
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/archiva/" class="md-nav__link">
+        Archiva
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/attach_gcp_disk/" class="md-nav__link">
+        Adding persistence disk to existing VMs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/docker/" class="md-nav__link">
+        Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/domejudge/" class="md-nav__link">
+        DomJudge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/gcloud/" class="md-nav__link">
+        Cheat sheet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/hosting/" class="md-nav__link">
+        VPS vs Dedicated server Hosting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/kafka/" class="md-nav__link">
+        Kafka
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/log4j2/" class="md-nav__link">
+        Apache Log4j 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/logback/" class="md-nav__link">
+        LogBack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/prometheus/" class="md-nav__link">
+        Metrics types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/security/" class="md-nav__link">
+        GPG
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurations/swarm/" class="md-nav__link">
+        Docker Swarm
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Databases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Databases" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Databases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databases/Elasticsearch/" class="md-nav__link">
+        Getting Started With Elasticsearch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databases/GraphQL/" class="md-nav__link">
+        GraphQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databases/Influxdb/" class="md-nav__link">
+        Concepts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databases/MongoDB/" class="md-nav__link">
+        MongoDB Schema Design Best Practices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databases/Redis/" class="md-nav__link">
+        Redis
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          High output management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="High output management" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          High output management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high_output_management/SUMMARY/" class="md-nav__link">
+        Summary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high_output_management/chapter1/" class="md-nav__link">
+        The Basics of Production: Delivering a Breakfast
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high_output_management/chapter2/" class="md-nav__link">
+        Managing the Breakfast Factory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high_output_management/chapter3/" class="md-nav__link">
+        Managerial Leverage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../high_output_management/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Other
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Other" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Other
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/Startups/" class="md-nav__link">
+        Startups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/beat-the-python/" class="md-nav__link">
+        Beat the Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/books/" class="md-nav__link">
+        Books
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/commands/" class="md-nav__link">
+        Split mkv video
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/emacs/" class="md-nav__link">
+        Emacs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/english/" class="md-nav__link">
+        Talk fluently
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/entrepreneurship/" class="md-nav__link">
+        Enterpreneurship
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/facebook_ads/" class="md-nav__link">
+        Facebook ads
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/fix_stuck_apt/" class="md-nav__link">
+        Apt and Dpkg stuck at install/remove packages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/git-server/" class="md-nav__link">
+        Admin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/grub/" class="md-nav__link">
+        Grub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/habit/" class="md-nav__link">
+        Learn How To Control Your Mind (USE This To BrainWash Yourself)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/install_python_from_source/" class="md-nav__link">
+        Install python from source
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/jupyterlab/" class="md-nav__link">
+        JupyterLab Extensions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/kubernets/" class="md-nav__link">
+        Kubernets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/lessons/" class="md-nav__link">
+        02 Mars 2020
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/marketing/" class="md-nav__link">
+        Marketing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/minio/" class="md-nav__link">
+        Grant access to models bucket for my user
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/mlflow/" class="md-nav__link">
+        Mlflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/productivity/" class="md-nav__link">
+        The Mikhaila Peterson Podcast #8 - Chris Williamson (The productivity guy)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/python_workshop/" class="md-nav__link">
+        Python workshop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/resizegpc/" class="md-nav__link">
+        Resize GCP disk
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/seldon/" class="md-nav__link">
+        Seldon.io
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/self-esteem/" class="md-nav__link">
+        Self esteem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/sleep/" class="md-nav__link">
+        Sleep
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/therapy/" class="md-nav__link">
+        Therapy
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/time/" class="md-nav__link">
+        Time management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other/workshop/" class="md-nav__link">
+        Workshop
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Programming
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Programming" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Programming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/MLOps/" class="md-nav__link">
+        MLOps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/SUMMARY/" class="md-nav__link">
+        Summary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/Unit%20Tests/" class="md-nav__link">
+        Unit Tests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/api/" class="md-nav__link">
+        REST APIs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/clean_code/" class="md-nav__link">
+        Clean Code, Uncle Bob
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/css/" class="md-nav__link">
+        Css
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/design_patterns/" class="md-nav__link">
+        Design Patterns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/go/" class="md-nav__link">
+        Install
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/spacemacs/" class="md-nav__link">
+        Spacemacs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/ttd/" class="md-nav__link">
+        TTD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/vscode/" class="md-nav__link">
+        Black formatting
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conda/" class="md-nav__link">
+        Anaconda
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../descriptors/" class="md-nav__link">
+        Descriptors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../effective-python/" class="md-nav__link">
+        Forward
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firebase/" class="md-nav__link">
+        [Python Firebase SDK](https://firebase.google.com/docs/reference/admin/python/)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flask/" class="md-nav__link">
+        Flask
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functools/" class="md-nav__link">
+        Functools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pip/" class="md-nav__link">
+        Pip
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Introducing JSX
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Introducing JSX
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#embedding-expressions-in-jsx" class="md-nav__link">
+    Embedding Expressions in JSX
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsx-is-an-expression-too" class="md-nav__link">
+    JSX is an Expression Too
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specifying-attributes-with-jsx" class="md-nav__link">
+    Specifying Attributes with JSX
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsx-prevents-injection-attacks" class="md-nav__link">
+    JSX Prevents Injection Attacks
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Scala
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Scala" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Scala
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scala/SUMMARY/" class="md-nav__link">
+        Summary
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scala/ammonite/" class="md-nav__link">
+        Ammonite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scala/chapter1/" class="md-nav__link">
+        Scala
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scala/sbt-native-packager/" class="md-nav__link">
+        sbt-native-packer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scala/sbt/" class="md-nav__link">
+        Sbt
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scala/standars/" class="md-nav__link">
+        Standars
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#embedding-expressions-in-jsx" class="md-nav__link">
+    Embedding Expressions in JSX
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsx-is-an-expression-too" class="md-nav__link">
+    JSX is an Expression Too
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specifying-attributes-with-jsx" class="md-nav__link">
+    Specifying Attributes with JSX
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsx-prevents-injection-attacks" class="md-nav__link">
+    JSX Prevents Injection Attacks
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/mohammedi-haroune/notes/edit/master/docs/python/react.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h1 id="introducing-jsx">Introducing JSX</h1>
+<h2 id="embedding-expressions-in-jsx">Embedding Expressions in JSX</h2>
+<p>You can put any valid JavaScript expression inside the curly braces in JSX</p>
+<h2 id="jsx-is-an-expression-too">JSX is an Expression Too</h2>
+<p>After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects.</p>
+<p>This means that you can use JSX inside of if statements and for loops, assign it to variables, accept it as arguments, and return it from functions</p>
+<h2 id="specifying-attributes-with-jsx">Specifying Attributes with JSX</h2>
+<p>You may use quotes to specify string literals as attributes or curly braces to embed a JavaScript expression in an attribute.</p>
+<h2 id="jsx-prevents-injection-attacks">JSX Prevents Injection Attacks</h2>
+<p>By default, React DOM escapes any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that’s not explicitly written in your application. Everything is converted to a string before being rendered.</p>
+<h1 id="rendering-elements">Rendering Elements</h1>
+<h2 id="rendering-an-element-into-the-dom">Rendering an Element into the DOM</h2>
+<div class="codehilite"><pre><span></span><code>const element = <span class="nt">&lt;h1&gt;</span>Hello, world<span class="nt">&lt;/h1&gt;</span>;
+ReactDOM.render(element, document.getElementById(&#39;root&#39;));
+</code></pre></div>
+
+<h2 id="updating-the-rendered-element">Updating the Rendered Element</h2>
+<p>React elements are immutable. Once you create an element, you can’t change its children or attributes,
+the only way to update the UI is to create a new element, and pass it to <code>ReactDOM.render()</code>,
+note that this method is implicitly called when using <code>setState</code> method.</p>
+<h1 id="components-and-props">Components and Props</h1>
+<p>Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called <strong>props</strong>) and return React elements describing what should appear on the screen.</p>
+<h2 id="function-and-class-components">Function and Class Components</h2>
+<div class="codehilite"><pre><span></span><code>function Welcome(props) {
+  return <span class="nt">&lt;h1&gt;</span>Hello, {props.name}<span class="nt">&lt;/h1&gt;</span>;
+}
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>class Welcome extends React.Component {
+  render() {
+    return <span class="nt">&lt;h1&gt;</span>Hello, {this.props.name}<span class="nt">&lt;/h1&gt;</span>;
+  }
+}
+</code></pre></div>
+
+<h2 id="rendering-a-component">Rendering a Component</h2>
+<p>When React sees an element representing a user-defined component, it passes JSX attributes to this component as a single object. We call this object <strong>props</strong>.</p>
+<div class="codehilite"><pre><span></span><code>function Welcome(props) {
+  return <span class="nt">&lt;h1&gt;</span>Hello, {props.name}<span class="nt">&lt;/h1&gt;</span>;
+}
+
+const element = <span class="nt">&lt;Welcome</span> <span class="na">name=</span><span class="s">&quot;Sara&quot;</span> <span class="nt">/&gt;</span>;
+ReactDOM.render(
+  element,
+  document.getElementById(&#39;root&#39;)
+);
+</code></pre></div>
+
+<p>Note: Always start component names with a capital letter.</p>
+<h2 id="props-are-read-only">Props are Read-Only</h2>
+<p>All React components must act like pure functions with respect to their props.</p>
+<p>Of course, application UIs are dynamic and change over time. In the next section, we will introduce a new concept of <strong>state</strong></p>
+<h1 id="state-and-lifecycle">State and Lifecycle</h1>
+<p>Class components should always call the base constructor with props.</p>
+<p>The <code>componentDidMount()</code> method runs after the component output has been rendered to the DOM.</p>
+<p>If the component is ever removed from the DOM, React calls <code>componentWillUnmount()</code>.</p>
+<p>You are free to add additional fields to the class manually if you need to store something that doesn’t participate in the data flow</p>
+<h2 id="using-state-correctly">Using State Correctly</h2>
+<h3 id="do-not-modify-state-directly">Do Not Modify State Directly</h3>
+<p>The only place where you can assign this.state is the constructor.</p>
+<h3 id="state-updates-may-be-asynchronous">State Updates May Be Asynchronous</h3>
+<p>Because <code>this.props</code> and <code>this.state</code> may be updated asynchronously, you should not rely on their values for calculating the next state.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="nt">Wrong</span><span class="w"></span>
+<span class="nt">this</span><span class="p">.</span><span class="nc">setState</span><span class="o">(</span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">counter</span><span class="p">:</span><span class="w"> </span><span class="n">this</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">counter</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">this</span><span class="o">.</span><span class="n">props</span><span class="o">.</span><span class="n">increment</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="o">);</span><span class="w"></span>
+
+<span class="o">//</span><span class="w"> </span><span class="nt">Correct</span><span class="w"></span>
+<span class="nt">this</span><span class="p">.</span><span class="nc">setState</span><span class="o">((</span><span class="nt">state</span><span class="o">,</span><span class="w"> </span><span class="nt">props</span><span class="o">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="o">(</span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">counter</span><span class="p">:</span><span class="w"> </span><span class="n">state</span><span class="o">.</span><span class="n">counter</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">props</span><span class="o">.</span><span class="n">increment</span><span class="w"></span>
+<span class="p">}</span><span class="o">));</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="the-data-flows-down">The Data Flows Down</h2>
+<p>Neither parent nor child components can know if a certain component is stateful or stateless, and they shouldn’t care whether it is defined as a function or a class.</p>
+<p>Any state is always owned by some specific component, and any data or UI derived from that state can only affect components “below” them in the tree, this is commonly called a <strong>top-down</strong> or <strong>unidirectional</strong> <em>data flow</em></p>
+<h1 id="handling-events">Handling Events</h1>
+<p>React events are named using camelCase, rather than lowercase.</p>
+<p>With JSX you pass a function as the event handler, rather than a string.</p>
+<p>You cannot return false to prevent default behavior in React. You must call preventDefault explicitly.</p>
+<p>When you define a component using an ES6 class, a common pattern is for an event handler to be a method on the class</p>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="n">Toggle</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="n">React</span><span class="o">.</span><span class="n">Component</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">constructor</span><span class="p">(</span><span class="n">props</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">super</span><span class="p">(</span><span class="n">props</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">this</span><span class="o">.</span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">isToggleOn</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span><span class="p">};</span><span class="w"></span>
+
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">binding</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">necessary</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="err">`</span><span class="n">this</span><span class="err">`</span><span class="w"> </span><span class="n">work</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">callback</span><span class="w"></span>
+<span class="w">    </span><span class="n">this</span><span class="o">.</span><span class="n">handleClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">this</span><span class="o">.</span><span class="n">handleClick</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">this</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">handleClick</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">this</span><span class="o">.</span><span class="n">setState</span><span class="p">(</span><span class="n">state</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">({</span><span class="w"></span>
+<span class="w">      </span><span class="n">isToggleOn</span><span class="p">:</span><span class="w"> </span><span class="o">!</span><span class="n">state</span><span class="o">.</span><span class="n">isToggleOn</span><span class="w"></span>
+<span class="w">    </span><span class="p">}));</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">render</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;</span><span class="n">button</span><span class="w"> </span><span class="n">onClick</span><span class="o">=</span><span class="p">{</span><span class="n">this</span><span class="o">.</span><span class="n">handleClick</span><span class="p">}</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="n">this</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">isToggleOn</span><span class="w"> </span><span class="err">?</span><span class="w"> </span><span class="s1">&#39;ON&#39;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;OFF&#39;</span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">ReactDOM</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="o">&lt;</span><span class="n">Toggle</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</code></pre></div>
+
+<p>You have to be careful about the meaning of <code>this</code> in JSX callbacks. In JavaScript, class methods are not bound by default. If you forget to bind <code>this.handleClick</code> and pass it to onClick, <code>this</code> will be <code>undefined</code> when the function is actually called, if you refer to a method without () after it, such as <code>onClick={this.handleClick}</code>, you should <strong>bind</strong> that method.</p>
+<p>If calling <code>bind</code> annoys you, there are two ways you can get around this. If you are using the experimental public class fields syntax, you can use class fields to correctly bind callbacks:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">class</span><span class="w"> </span><span class="n">LoggingButton</span><span class="w"> </span><span class="n">extends</span><span class="w"> </span><span class="n">React</span><span class="p">.</span><span class="k">Component</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">syntax</span><span class="w"> </span><span class="n">ensures</span><span class="w"> </span><span class="n n-Quoted">`this`</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">bound</span><span class="w"> </span><span class="n">within</span><span class="w"> </span><span class="n">handleClick</span><span class="p">.</span><span class="w"></span>
+<span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="n">Warning</span><span class="o">:</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="o">*</span><span class="n">experimental</span><span class="o">*</span><span class="w"> </span><span class="n">syntax</span><span class="p">.</span><span class="w"></span>
+<span class="w">  </span><span class="n">handleClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s1">&#39;this is:&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">this</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">render</span><span class="p">()</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;</span><span class="n">button</span><span class="w"> </span><span class="n">onClick</span><span class="o">=</span><span class="err">{</span><span class="n">this</span><span class="p">.</span><span class="n">handleClick</span><span class="err">}</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="n">Click</span><span class="w"> </span><span class="n">me</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>This syntax is enabled by default in Create React App.</p>
+<p>If you aren’t using class fields syntax, you can use an arrow function in the callback:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">class</span><span class="w"> </span><span class="n">LoggingButton</span><span class="w"> </span><span class="n">extends</span><span class="w"> </span><span class="n">React</span><span class="p">.</span><span class="k">Component</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">handleClick</span><span class="p">()</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s1">&#39;this is:&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">this</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">render</span><span class="p">()</span><span class="w"> </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">syntax</span><span class="w"> </span><span class="n">ensures</span><span class="w"> </span><span class="n n-Quoted">`this`</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">bound</span><span class="w"> </span><span class="n">within</span><span class="w"> </span><span class="n">handleClick</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;</span><span class="n">button</span><span class="w"> </span><span class="n">onClick</span><span class="o">=</span><span class="err">{</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">this</span><span class="p">.</span><span class="n">handleClick</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="err">}</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="n">Click</span><span class="w"> </span><span class="n">me</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>The problem with this syntax is that a different callback is created each time the <code>LoggingButton</code> renders. In most cases, this is fine. However, if this callback is passed as a prop to lower components, those components might do an extra re-rendering. We generally recommend binding in the constructor or using the class fields syntax, to avoid this sort of performance problem.</p>
+<h2 id="passing-arguments-to-event-handlers">Passing Arguments to Event Handlers</h2>
+<p>Inside a loop it is common to want to pass an extra parameter to an event handler. For example, if id is the row ID, either of the following would work:</p>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;button</span> <span class="na">onClick=</span><span class="s">{(e)</span> <span class="err">=</span><span class="nt">&gt;</span> this.deleteRow(id, e)}&gt;Delete Row<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">onClick=</span><span class="s">{this.deleteRow.bind(this,</span> <span class="err">id)}</span><span class="nt">&gt;</span>Delete Row<span class="nt">&lt;/button&gt;</span>
+</code></pre></div>
+
+<p>The above two lines are equivalent, and use arrow functions and <code>Function.prototype.bind</code> respectively.</p>
+<p>In both cases, the e argument representing the React event will be passed as a second argument after the ID. With an arrow function, we have to pass it explicitly, but with bind any further arguments are automatically forwarded.</p>
+<h1 id="conditional-rendering">Conditional Rendering</h1>
+<h2 id="element-variables">Element Variables</h2>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="n">LoginControl</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="n">React</span><span class="o">.</span><span class="n">Component</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">constructor</span><span class="p">(</span><span class="n">props</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">super</span><span class="p">(</span><span class="n">props</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">this</span><span class="o">.</span><span class="n">handleLoginClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">this</span><span class="o">.</span><span class="n">handleLoginClick</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">this</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">this</span><span class="o">.</span><span class="n">handleLogoutClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">this</span><span class="o">.</span><span class="n">handleLogoutClick</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">this</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">this</span><span class="o">.</span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">isLoggedIn</span><span class="p">:</span><span class="w"> </span><span class="bp">false</span><span class="p">};</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">handleLoginClick</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">this</span><span class="o">.</span><span class="n">setState</span><span class="p">({</span><span class="n">isLoggedIn</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span><span class="p">});</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">handleLogoutClick</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">this</span><span class="o">.</span><span class="n">setState</span><span class="p">({</span><span class="n">isLoggedIn</span><span class="p">:</span><span class="w"> </span><span class="bp">false</span><span class="p">});</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">render</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">isLoggedIn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">this</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">isLoggedIn</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">let</span><span class="w"> </span><span class="n">button</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isLoggedIn</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="n">LogoutButton</span><span class="w"> </span><span class="n">onClick</span><span class="o">=</span><span class="p">{</span><span class="n">this</span><span class="o">.</span><span class="n">handleLogoutClick</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="n">LoginButton</span><span class="w"> </span><span class="n">onClick</span><span class="o">=</span><span class="p">{</span><span class="n">this</span><span class="o">.</span><span class="n">handleLoginClick</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="o">&lt;</span><span class="n">Greeting</span><span class="w"> </span><span class="n">isLoggedIn</span><span class="o">=</span><span class="p">{</span><span class="n">isLoggedIn</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="n">button</span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">ReactDOM</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="o">&lt;</span><span class="n">LoginControl</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s1">&#39;root&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="inline-if-with-logical-operator">Inline If with Logical &amp;&amp; Operator</h2>
+<div class="codehilite"><pre><span></span><code>function Mailbox(props) {
+  const unreadMessages = props.unreadMessages;
+  return (
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;h1&gt;</span>Hello!<span class="nt">&lt;/h1&gt;</span>
+      {unreadMessages.length &gt; 0 <span class="err">&amp;&amp;</span>
+        <span class="nt">&lt;h2&gt;</span>
+          You have {unreadMessages.length} unread messages.
+        <span class="nt">&lt;/h2&gt;</span>
+      }
+    <span class="nt">&lt;/div&gt;</span>
+  );
+}
+
+const messages = [&#39;React&#39;, &#39;Re: React&#39;, &#39;Re:Re: React&#39;];
+ReactDOM.render(
+  <span class="nt">&lt;Mailbox</span> <span class="na">unreadMessages=</span><span class="s">{messages}</span> <span class="nt">/&gt;</span>,
+  document.getElementById(&#39;root&#39;)
+);
+</code></pre></div>
+
+<h2 id="inline-if-else-with-conditional-operator">Inline If-Else with Conditional Operator</h2>
+<div class="codehilite"><pre><span></span><code>render() {
+  const isLoggedIn = this.state.isLoggedIn;
+  return (
+    <span class="nt">&lt;div&gt;</span>
+      The user is <span class="nt">&lt;b&gt;</span>{isLoggedIn ? &#39;currently&#39; : &#39;not&#39;}<span class="nt">&lt;/b&gt;</span> logged in.
+    <span class="nt">&lt;/div&gt;</span>
+  );
+}
+</code></pre></div>
+
+<h2 id="preventing-component-from-rendering">Preventing Component from Rendering</h2>
+<p>To do this return <code>null</code> instead of its <code>render</code> output.</p>
+<p>Returning <code>null</code> from a component’s <code>render</code> method does not affect the firing of the component’s lifecycle methods. For instance <code>componentDidUpdate</code> will still be called.</p>
+<h1 id="lists-and-keys">Lists and Keys</h1>
+<h2 id="rendering-multiple-components">Rendering Multiple Components</h2>
+<p>You can build collections of elements and include them in JSX using curly braces <code>{}</code>.</p>
+<div class="codehilite"><pre><span></span><code>const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =&gt;
+  <span class="nt">&lt;li&gt;</span>{number}<span class="nt">&lt;/li&gt;</span>
+);
+ReactDOM.render(
+  <span class="nt">&lt;ul&gt;</span>{listItems}<span class="nt">&lt;/ul&gt;</span>,
+  document.getElementById(&#39;root&#39;)
+);
+</code></pre></div>
+
+<h2 id="keys">Keys</h2>
+<p>Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity</p>
+<p>We don’t recommend using indexes for keys if the order of items may change. This can negatively impact performance and may cause issues with component state</p>
+<p>Keys serve as a hint to React but they don’t get passed to your components. If you need the same value in your component, pass it explicitly as a prop with a different name:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posts</span><span class="o">.</span><span class="n">map</span><span class="p">((</span><span class="n">post</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="o">&lt;</span><span class="n">Post</span><span class="w"></span>
+<span class="w">    </span><span class="n">key</span><span class="o">=</span><span class="p">{</span><span class="n">post</span><span class="o">.</span><span class="n">id</span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">id</span><span class="o">=</span><span class="p">{</span><span class="n">post</span><span class="o">.</span><span class="n">id</span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">post</span><span class="o">.</span><span class="n">title</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</code></pre></div>
+
+<h1 id="forms">Forms</h1>
+<h2 id="controlled-components">Controlled Components</h2>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="n">NameForm</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="n">React</span><span class="o">.</span><span class="n">Component</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">constructor</span><span class="p">(</span><span class="n">props</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">super</span><span class="p">(</span><span class="n">props</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">this</span><span class="o">.</span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">};</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">this</span><span class="o">.</span><span class="n">handleChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">this</span><span class="o">.</span><span class="n">handleChange</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">this</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">this</span><span class="o">.</span><span class="n">handleSubmit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">this</span><span class="o">.</span><span class="n">handleSubmit</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">this</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">handleChange</span><span class="p">(</span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">this</span><span class="o">.</span><span class="n">setState</span><span class="p">({</span><span class="n">value</span><span class="p">:</span><span class="w"> </span><span class="n">event</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">value</span><span class="p">});</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">handleSubmit</span><span class="p">(</span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">alert</span><span class="p">(</span><span class="s1">&#39;A name was submitted: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">this</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">value</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">event</span><span class="o">.</span><span class="n">preventDefault</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">render</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;</span><span class="n">form</span><span class="w"> </span><span class="n">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="n">this</span><span class="o">.</span><span class="n">handleSubmit</span><span class="p">}</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="o">&lt;</span><span class="n">label</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">          </span><span class="n">Name</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="o">&lt;</span><span class="n">input</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="p">{</span><span class="n">this</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">value</span><span class="p">}</span><span class="w"> </span><span class="n">onChange</span><span class="o">=</span><span class="p">{</span><span class="n">this</span><span class="o">.</span><span class="n">handleChange</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">        </span><span class="o">&lt;</span><span class="n">input</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="s2">&quot;Submit&quot;</span><span class="w"> </span><span class="o">/&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="controlled-input-null-value">Controlled Input Null Value</h2>
+<p>Specifying the value prop on a controlled component prevents the user from changing the input unless you desire so. If you’ve specified a value but the input is still editable, you may have accidentally set value to undefined or null.</p>
+<p>The following code demonstrates this. (The input is locked at first but becomes editable after a short delay.)</p>
+<div class="codehilite"><pre><span></span><code>ReactDOM.render(&lt;input value=&quot;hi&quot; /&gt;, mountNode);
+
+setTimeout(function() {
+  ReactDOM.render(&lt;input value={null} /&gt;, mountNode);
+}, 1000);
+</code></pre></div>
+
+<h2 id="handling-multiple-inputs">Handling Multiple Inputs</h2>
+<div class="codehilite"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="n">ES6</span><span class="w"> </span><span class="n">computed</span><span class="w"> </span><span class="n">property</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">syntax</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">state</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="k">corresponding</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">given</span><span class="w"> </span><span class="k">input</span><span class="w"> </span><span class="nl">name</span><span class="p">:</span><span class="w"></span>
+<span class="n">this</span><span class="p">.</span><span class="n">setState</span><span class="p">(</span><span class="err">{</span><span class="w"></span>
+<span class="w">  </span><span class="o">[</span><span class="n">name</span><span class="o">]</span><span class="err">:</span><span class="w"> </span><span class="k">value</span><span class="w"></span>
+<span class="err">}</span><span class="p">);</span><span class="w"></span>
+
+<span class="o">//</span><span class="n">It</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">equivalent</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">ES5</span><span class="w"> </span><span class="nl">code</span><span class="p">:</span><span class="w"></span>
+<span class="nf">var</span><span class="w"> </span><span class="n">partialState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{}</span><span class="p">;</span><span class="w"></span>
+<span class="n">partialState</span><span class="o">[</span><span class="n">name</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">value</span><span class="p">;</span><span class="w"></span>
+<span class="n">this</span><span class="p">.</span><span class="n">setState</span><span class="p">(</span><span class="n">partialState</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+
+<h1 id="lifting-state-up">Lifting State Up</h1>
+<p>Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor. Let’s see how this works in action.</p>
+<h1 id="composition-vs-inheritance">Composition vs Inheritance</h1>
+<h2 id="containment">Containment</h2>
+<p>Some components don’t know their children ahead of time. This is especially common for components like <code>Sidebar</code> or <code>Dialog</code> that represent generic <strong>boxes</strong>.</p>
+<p>We recommend that such components use the special <code>children</code> prop to pass children elements directly into their output:</p>
+<div class="codehilite"><pre><span></span><code>function FancyBorder(props) {
+  return (
+    <span class="nt">&lt;div</span> <span class="na">className=</span><span class="s">{&#39;FancyBorder</span> <span class="err">FancyBorder-&#39;</span> <span class="err">+</span> <span class="err">props.color}</span><span class="nt">&gt;</span>
+      {props.children}
+    <span class="nt">&lt;/div&gt;</span>
+  );
+}
+</code></pre></div>
+
+<p>This lets other components pass arbitrary children to them by nesting the JSX:</p>
+<div class="codehilite"><pre><span></span><code>function WelcomeDialog() {
+  return (
+    <span class="nt">&lt;FancyBorder</span> <span class="na">color=</span><span class="s">&quot;blue&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h1</span> <span class="na">className=</span><span class="s">&quot;Dialog-title&quot;</span><span class="nt">&gt;</span>
+        Welcome
+      <span class="nt">&lt;/h1&gt;</span>
+      <span class="nt">&lt;p</span> <span class="na">className=</span><span class="s">&quot;Dialog-message&quot;</span><span class="nt">&gt;</span>
+        Thank you for visiting our spacecraft!
+      <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/FancyBorder&gt;</span>
+  );
+}
+</code></pre></div>
+
+<p>Anything inside the <code>&lt;FancyBorder&gt;</code> JSX tag gets passed into the <code>FancyBorder</code> component as a children prop. Since <code>FancyBorder</code> renders <code>{props.children}</code> inside a <code>&lt;div&gt;</code>, the passed elements appear in the final output.</p>
+<p>While this is less common, sometimes you might need multiple <strong>holes</strong> in a component. In such cases you may come up with your own convention instead of using children:</p>
+<div class="codehilite"><pre><span></span><code>function SplitPane(props) {
+  return (
+    <span class="nt">&lt;div</span> <span class="na">className=</span><span class="s">&quot;SplitPane&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">className=</span><span class="s">&quot;SplitPane-left&quot;</span><span class="nt">&gt;</span>
+        {props.left}
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">className=</span><span class="s">&quot;SplitPane-right&quot;</span><span class="nt">&gt;</span>
+        {props.right}
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  );
+}
+
+function App() {
+  return (
+    <span class="nt">&lt;SplitPane</span>
+      <span class="na">left=</span><span class="s">{</span>
+        <span class="err">&lt;Contacts</span> <span class="nt">/&gt;</span>
+      }
+      right={
+        <span class="nt">&lt;Chat</span> <span class="nt">/&gt;</span>
+      } /&gt;
+  );
+}
+</code></pre></div>
+
+<h2 id="so-what-about-inheritance">So What About Inheritance?</h2>
+<p>At Facebook, we use React in thousands of components, and we haven’t found any use cases where we would recommend creating component inheritance hierarchies.</p>
+<p>Props and composition give you all the flexibility you need to customize a component’s look and behavior in an explicit and safe way. Remember that components may accept arbitrary props, including primitive values, React elements, or functions.</p>
+<p>If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. The components may import it and use that function, object, or a class, without extending it.</p>
+<h1 id="thinking-in-react">Thinking in React</h1>
+<h2 id="step-1-break-the-ui-into-a-component-hierarchy">Step 1: Break The UI Into A Component Hierarchy</h2>
+<h2 id="step-2-build-a-static-version-in-react-dont-use-state-at-all">Step 2: Build A Static Version in React (don’t use state at all)</h2>
+<h2 id="step-3-identify-the-minimal-but-complete-representation-of-ui-state">Step 3: Identify The Minimal (but complete) Representation Of UI State</h2>
+<p>In order to define state. Simply ask three questions about each piece of data:</p>
+<ol>
+<li>Is it passed in from a parent via props? If so, it probably isn’t state.</li>
+<li>Does it remain unchanged over time? If so, it probably isn’t state.</li>
+<li>Can you compute it based on any other state or props in your component? If so, it isn’t state.</li>
+</ol>
+<h2 id="step-4-identify-where-your-state-should-live">Step 4: Identify Where Your State Should Live</h2>
+<p>Remember: React is all about one-way data flow down the component hierarchy. It may not be immediately clear which component should own what state. <strong>This is often the most challenging part for newcomers to understand</strong>.</p>
+<h2 id="step-5-add-inverse-data-flow">Step 5: Add Inverse Data Flow</h2>
+<p>Since components should only update their own state, callbacks should be passed to the children components in order to allow them the change the state</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../pip/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Pip" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Pip
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../scala/SUMMARY/" class="md-footer__link md-footer__link--next" aria-label="Next: Summary" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Summary
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.078830c0.min.js"></script>
+      
+    
+  </body>
+</html>
