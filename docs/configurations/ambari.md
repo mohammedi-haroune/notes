@@ -1,6 +1,5 @@
 # Apache Ambari
 
-
 - ambari-agent should be already installed on the hosts
 IF NOT installed then
 ```

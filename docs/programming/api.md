@@ -1,6 +1,5 @@
 # REST APIs
-kk
-### Defintions
+
 #### REST
 REST is a well-defnied structural patterns for designing APIs that allows software to talk to each others, it doens't dictate any implementation details even the protocol but the most common is HTTP
 

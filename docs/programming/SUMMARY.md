@@ -1,5 +1,5 @@
 # Summary
 
-* [First Chapter](chapter1.md)
-* [Spacemacs](spacemacs.md)
+* [First Chapter](Unit%20Tests.md)
+* [Spacemacs](Spacemacs.md)
 

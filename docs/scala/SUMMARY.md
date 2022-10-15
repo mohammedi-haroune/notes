@@ -1,5 +1,5 @@
 # Summary
 
-* [Scala](chapter1.md)
+* [Scala](scala/chapter1.md)
 * [Sbt](sbt.md)
 

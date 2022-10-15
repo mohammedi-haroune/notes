@@ -1,5 +1,3 @@
-# Unit Tests :D
-
 ## Effective Unit Testing by Eliotte Rusty Harold
 
 ### Why do we write our tests ?
@@ -9,7 +7,7 @@
 * We make mistakes
 * To code faster, with more confidence and fewer regressions
 
-### What is a Test
+### What is a unit test
 
 > Verify that a known, fixed input produces a known, fixed output
 

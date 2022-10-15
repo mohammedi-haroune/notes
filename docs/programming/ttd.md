@@ -1,8 +1,8 @@
+# TTD
 ## Why ?
 - Because the civilization depends on us
 - We can clean code with confidence
 - Code will be testable which makes it decoupled
--
 
 Double <- Dummy <- Stub <- Spy <- Mock
 Double <- Fake

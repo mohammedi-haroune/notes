@@ -1,3 +1,5 @@
+# Share resources
+
 ## https://www.loadteam.com/
 > Q: What are these "jobs" that LoadTeam runs on my computer?
 > A: LoadTeam uses your computer processor and memory to mine coins.  

@@ -10,7 +10,7 @@ We normalize relational schemas using 3rd normal form which aims to split data i
 
 Example:
 
-![[Pasted image 20220930122708.png]]
+![[mongodb-example.png]]
 
 ```json
 {

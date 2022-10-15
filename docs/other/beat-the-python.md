@@ -1,4 +1,5 @@
-# 30 April online session on Zoom with Midev
+# Beat the Python
+## 30 April online session on Zoom with Midev
 We did an online session from 2pm to 7pm, we explainded:
 - What, who, why and where
 - How to install, Jupyter (breveily)
@@ -12,7 +13,7 @@ We did an online session from 2pm to 7pm, we explainded:
 - lists
 - dicts
 
-## Lessons
+### Lessons
 - Don't use an application on production without testing it, Zoom caused me a lot of trouble during session: 
   - too many popups/windows during screen cast
   - having to accept people in the waiting room

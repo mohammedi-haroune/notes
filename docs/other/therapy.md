@@ -1,4 +1,3 @@
-
 ## Books
 1. Recommended by a [Reddit guy on r/DecidingToBeBetter](https://www.reddit.com/r/DecidingToBeBetter/comments/g60gtb/i_started_studying_psychology_in_my_free_time_to/): 
 OP:

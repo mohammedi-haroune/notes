@@ -3,3 +3,5 @@ venv
 docs/.stversions/
 docs/.obsidian
 docs/me
+docs/.syncthing.*
+docs/.trash
